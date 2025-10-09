@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="{{ asset('template_admin/css/vendor/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('template_admin/css/vendor/animate.css') }}">
+<link rel="stylesheet" href="{{ asset('template_admin/css/vendor/spacing.css') }}">
+<link rel="stylesheet" href="{{ asset('template_admin/css/vendor/magnific-popup.css') }}">
+<link rel="stylesheet" href="{{ asset('template_admin/css/plugins/simplebar.min.css') }}">
+<link rel="stylesheet" href="{{ asset('template_admin/css/plugins/waves.min.css') }}">
+<link rel="stylesheet" href="{{ asset('template_admin/css/plugins/nano.min.css') }}">
+<link rel="stylesheet" href="{{ asset('template_admin/css/plugins/line-awesome.min.css') }}">
+<link rel="stylesheet" href="{{ asset('template_admin/css/plugins/remixicon.css') }}">
+<link rel="stylesheet" href="{{ asset('template_admin/css/plugins/tabler-icons.css') }}">
+<link rel="stylesheet" href="{{ asset('template_admin/css/plugins/dataTables.bootstrap5.min.css') }}">
+<link rel="stylesheet" href="{{ asset('template_admin/css/plugins/responsive.bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('template_admin/css/plugins/buttons.bootstrap5.min.css') }}">
+<link rel="stylesheet" href="{{ asset('template_admin/css/plugins/sweetalert2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('template_admin/css/main.css') }}">
