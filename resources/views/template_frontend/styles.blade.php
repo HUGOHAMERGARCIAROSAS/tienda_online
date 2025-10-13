@@ -5,8 +5,7 @@
 <meta name="author" content="support[at]hgarciardev.com">
 <meta name="copyright" content="hgarciardev.com">
 <meta name="application-name" content="MJGlam">
-<link rel="stylesheet" href="{{ asset('template/css/theme-0fe2be841.css') }}" media="all">
-<link rel="stylesheet" href="{{ asset('template/css/theme-3e033e841.css') }}" media="all">
+@yield('content_style')
 <link rel="preload" href="{{ asset('template/css/ceicons.woff2?t6ebnx') }}" as="font" type="font/woff2"
     crossorigin>
 <meta property="og:url" content="https://hgarciardev.com/">

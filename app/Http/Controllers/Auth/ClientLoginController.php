@@ -7,13 +7,29 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 
 class ClientLoginController extends Controller
 {
+
+    public function dashboard()
+    {
+        $categories = DB::table('categories')
+            ->whereNotNull('parent_id')
+            ->where('status', 1)
+            ->orderBy('name', 'ASC')
+            ->get();
+        return view('client.dashboard')->with(compact('categories'));
+    }
     public function showLoginForm()
     {
-        return view('auth.client-login');
+        $categories = DB::table('categories')
+            ->whereNotNull('parent_id')
+            ->where('status', 1)
+            ->orderBy('name', 'ASC')
+            ->get();
+        return view('auth.client-login')->with(compact('categories'));
     }
 
     public function login(Request $request)
@@ -40,7 +56,12 @@ class ClientLoginController extends Controller
 
     public function showRegisterForm()
     {
-        return view('auth.client-register');
+        $categories = DB::table('categories')
+            ->whereNotNull('parent_id')
+            ->where('status', 1)
+            ->orderBy('name', 'ASC')
+            ->get();
+        return view('auth.client-register')->with(compact('categories'));
     }
 
     public function register(Request $request)

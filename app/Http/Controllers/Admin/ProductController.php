@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
     public function index(){
+        
         return view('admin.products.index');
     }
 
@@ -60,5 +61,66 @@ class ProductController extends Controller
             ->orderBy('categories.name', 'ASC')
             ->get();
         return view('admin.products.create')->with(compact('categories'));
+    }
+
+    public function store(Request $request){
+
+        // validar slug
+
+        $slug = $request->slug;
+        $slug_count = DB::table('products')->where('slug', $slug)->count();
+        if ($slug_count > 0) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'El slug ya existe'
+            ]);
+        }
+        
+        $id = DB::table('products')->insertGetId([
+            'category_id' => $request->category,
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'price' => $request->precio,
+            'description' => $request->description,
+            'discount_price' => $request->precio_descuento,
+            'sku' => $request->sku,
+            'status' => $request->status,
+            'is_featured' => $request->is_featured,
+            'is_new' => $request->is_new,
+            'is_offer' => $request->is_offer,
+            'created_at' => now()
+        ]);
+
+        if(!$id){ 
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Error al crear el producto'
+            ]);
+        }
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $key=>$file) {
+                $image = time(). '_' . $file->getClientOriginalName();
+                $file->move(public_path('template_admin/images/product'), $image);
+
+                if($key==0){
+                    DB::table('products')->where('id', $id)->update([
+                        'url' => 'template_admin/images/product/' . $image
+                    ]);
+                }
+
+                DB::table('product_images')->insert([
+                    'product_id' => $id,
+                    'url' => 'template_admin/images/product/' . $image,
+                    'created_at' => now(),
+                    'is_primary' => 0
+                ]);
+            }
+        }
+
+
+        return response()->json([
+            'status' => 'success'
+        ]);
     }
 }

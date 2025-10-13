@@ -17,22 +17,20 @@ Route::middleware('guest:web')->group(function () {
 
     Route::get('/register',[ClientLoginController::class, 'showRegisterForm'])->name('register');
     Route::post('/register',[ClientLoginController::class, 'register'])->name('register');
+    Route::get('/categories/{slug}', [HomeController::class, 'showCategories'])->name('frontend.categories.show');
+    Route::get('/products/{slug}', [HomeController::class, 'showProducts'])->name('frontend.product.show');
+
+    Route::get('/cart', [HomeController::class, 'cart'])->name('frontend.cart');
 });
 
 
 
 Route::middleware('auth:web')->group(function () {
-    Route::get('/client/dashboard', function () {
-        return view('client.dashboard');
-    })->name('client.dashboard');
-
-
-
-    Route::get('/categories/{slug}', [HomeController::class, 'showCategories'])->name('frontend.categories.show');
-    Route::get('/products/{slug}', [HomeController::class, 'showProducts'])->name('frontend.product.show');
+    Route::get('/client/dashboard', [ClientLoginController::class, 'dashboard'])->name('client.dashboard');
 
     Route::post('/logout', [ClientLoginController::class, 'logout'])->name('logout');
 });
+
 
 
 Route::prefix('admin')->group(function () {
@@ -61,7 +59,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/admin/products', [ProductController::class, 'index'])->name('admin.products.index');
         Route::get('admin/products/create', [ProductController::class, 'create'])->name('admin.products.create');
         Route::get('admin_products_data', [ProductController::class, 'getData'])->name('admin.products.data');
-
+        Route::post('admin/products/store', [ProductController::class, 'store'])->name('admin.products.store');
 
 
 

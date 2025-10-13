@@ -80,7 +80,7 @@
                         <div class="relative">
                             <div class="icon-true">
                                 <input autocomplete="off" class="form-control" name="email" type="email"
-                                    value="" placeholder="Email" required="">
+                                    value="" placeholder="Correo Electrónico" required="">
                                 <span class="focus-border"><i></i></span>
                                 <svg class="svgic input-icon maincolor">
                                     <use href="{{ asset('template/images/lib.svg#email') }}"></use>
@@ -90,7 +90,7 @@
                         <div class="relative">
                             <div class="icon-true">
                                 <input autocomplete="off" class="form-control" name="name" type="text"
-                                    value="" placeholder="First Name" required="">
+                                    value="" placeholder="Nombres" required="">
                                 <span class="focus-border"><i></i></span>
                                 <svg class="svgic input-icon maincolor">
                                     <use href="{{ asset('template/images/lib.svg#account') }}"></use>
@@ -100,7 +100,7 @@
                         <div class="relative">
                             <div class="icon-true">
                                 <input autocomplete="off" class="form-control" name="password" type="password"
-                                    value="" placeholder="Password" required="">
+                                    value="" placeholder="Contraseña" required="">
                                 <span class="focus-border"><i></i></span>
                                 <svg class="svgic input-icon maincolor">
                                     <use href="{{ asset('template/images/lib.svg#password') }}"></use>
@@ -110,15 +110,14 @@
                         <div class="relative">
                             <div class="icon-true">
                                 <input autocomplete="off" class="form-control" name="password_confirmation"
-                                    type="password" value="" placeholder="Confirm Password" required="">
+                                    type="password" value="" placeholder="Confirmar Contraseña" required="">
                                 <span class="focus-border"><i></i></span>
                                 <svg class="svgic input-icon maincolor">
                                     <use href="{{ asset('template/images/lib.svg#password') }}"></use>
                                 </svg>
                             </div>
                         </div>
-                        <button class="btn btn-primary form-control-submit register-button" type="submit"
-                            data-back="https://alysum.promokit.eu/en/identity">
+                        <button class="btn btn-primary form-control-submit register-button" type="submit">
                             Registrarse
                         </button>
                     </form>

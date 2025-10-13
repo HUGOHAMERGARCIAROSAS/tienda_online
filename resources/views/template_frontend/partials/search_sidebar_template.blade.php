@@ -15,8 +15,8 @@
             </div>
             <div class="tab-content">
                 <div class="pk-search-widget flex-container categories-outside" data-page="1">
-                    <form method="get" action="https://alysum.promokit.eu/en/module/pkelements/search"
-                        data-original-action="https://alysum.promokit.eu/en/search" class="relative">
+                    <form method="get" action="#"
+                        data-original-action="#" class="relative">
                         <fieldset class="flex-container align-items-center">
                             <legend>Buscar</legend>
                             <div class="relative inner-search-button flex-container">

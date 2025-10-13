@@ -1,6 +1,6 @@
-<script src="{{ asset('template/js/bottom-695441840.js') }}"></script>
-<script src="{{ asset('template/js/bottom-4027fc840.js') }}" defer></script>
-<script src="{{ asset('template/js/bottom-5343f0840.js') }}" defer></script>
+
+
+@yield('content_script')
 <script src="{{ asset('template/js/bootstrap-custom.min.js') }}" defer></script>
 <script src="{{ asset('template/js/alysum.js') }}" defer></script>
 <script src="{{ asset('template/js/scripts.min.js') }}" defer></script>
@@ -17,3 +17,5 @@
 <script src="{{ asset('template/js/newsletter.min.js') }}" defer></script>
 <script src="{{ asset('template/js/scripts.min.js') }}" defer></script>
 <script src="{{ asset('template/js/pkcaptcha/scripts.min.js') }}" async></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{asset('carrito.js')}}"></script>

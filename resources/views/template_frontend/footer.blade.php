@@ -197,15 +197,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="elementor-element elementor-element-1051d619 elementor-widget elementor-widget-text-editor"
-                                            data-id="1051d619" data-element_type="widget"
-                                            data-widget_type="text-editor.default">
-                                            <div class="elementor-widget-container">
-                                                <div class="elementor-text-editor elementor-clearfix">
-                                                    <p style="margin: 0;">Devoluciones fáciles. Envío gratis en pedidos superiores a $100. ¿Necesitas ayuda?</p>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

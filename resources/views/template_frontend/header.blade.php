@@ -1,3 +1,30 @@
+<style>
+    .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 40px;
+    }
+
+    .category-item a {
+        display: block;
+        padding: 10px 12px;
+        color: #333; 
+        text-decoration: none;
+        border-radius: 6px;
+        background-color: #fff;
+        transition: all 0.3s ease;
+    }
+
+    .category-item a:hover {
+        background-color: #323232;
+        color: #fff;
+        transform: translateY(-3px); 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+</style>
 <header id="header">
     <template id="mobile-header-template">
         <div data-elementor-type="page" data-elementor-id="143010000"
@@ -333,323 +360,15 @@
                                                                         </div>
                                                                         <div class="pk-dropdown absolute pk-smooth"
                                                                             tabindex="-1" style="width:100%">
-                                                                            <div data-elementor-type="page"
-                                                                                data-elementor-id="5010000"
-                                                                                class="elementor elementor-5010000 elementor-bc-flex-widget"
-                                                                                data-elementor-settings="[]">
-                                                                                <div class="elementor-inner">
-                                                                                    <div
-                                                                                        class="elementor-section-wrap">
-                                                                                        <div class="elementor-element elementor-element-xosrlsm elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
-                                                                                            data-id="xosrlsm"
-                                                                                            data-element_type="section">
-                                                                                            <div
-                                                                                                class="elementor-container elementor-column-gap-default">
-                                                                                                <div  class="elementor-row">
-                                                                                                    <div class="elementor-element elementor-element-ctlwvrd elementor-column elementor-col-20 elementor-top-column"
-                                                                                                        data-id="ctlwvrd"
-                                                                                                        data-element_type="column">
-                                                                                                        <div
-                                                                                                            class="elementor-column-wrap elementor-element-populated">
-                                                                                                            <div
-                                                                                                                class="elementor-widget-wrap">
-                                                                                                                <div class="elementor-element elementor-element-ymaoy94 elementor-widget elementor-widget-pkcategories"
-                                                                                                                    data-id="ymaoy94"
-                                                                                                                    data-element_type="widget"
-                                                                                                                    data-widget_type="pkcategories.default">
-                                                                                                                    <div
-                                                                                                                        class="elementor-widget-container">
-                                                                                                                        <div
-                                                                                                                            class="pk-ce-widget-wrapper">
-                                                                                                                            <div
-                                                                                                                                class="pk-ce-widget view_grid">
-
-                                                                                                                                <h2
-                                                                                                                                    class="widget-pklinks-title">
-                                                                                                                                    <a
-                                                                                                                                        href="#">Categorías</a>
-                                                                                                                                </h2>
-                                                                                                                                <ul
-                                                                                                                                    class="widget-pklinks">
-                                                                                                                                    @foreach ($categories as $category) 
-                                                                                                                                        <li>
-                                                                                                                                        <a href="{{ route('frontend.categories.show', $category->slug) }}"
-                                                                                                                                            title="{{ $category->name }}">
-                                                                                                                                            {{ $category->name }}
-                                                                                                                                        </a>
-                                                                                                                                    </li>
-                                                                                                                                    @endforeach
-                                                                                                                                </ul>
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div class="elementor-element elementor-element-kfqbvjc elementor-column elementor-col-20 elementor-top-column"
-                                                                                                        data-id="kfqbvjc"
-                                                                                                        data-element_type="column">
-                                                                                                        <div
-                                                                                                            class="elementor-column-wrap elementor-element-populated">
-                                                                                                            <div
-                                                                                                                class="elementor-widget-wrap">
-                                                                                                                <div class="elementor-element elementor-element-jenyuyf elementor-widget elementor-widget-image"
-                                                                                                                    data-id="jenyuyf"
-                                                                                                                    data-element_type="widget"
-                                                                                                                    data-widget_type="image.default">
-                                                                                                                    <div
-                                                                                                                        class="elementor-widget-container">
-                                                                                                                        <div
-                                                                                                                            class="elementor-image">
-
-                                                                                                                            <a
-                                                                                                                                href="87-cardigans.html">
-
-                                                                                                                                <img src="https://ik.imagekit.io/promokit/Menu/menu_image02_ZgvhPTIpq.webp?updatedAt=1715515185326"
-                                                                                                                                    loading="lazy"
-                                                                                                                                    alt=""
-                                                                                                                                    width="1000"
-                                                                                                                                    height="1000">
-                                                                                                                            </a>
-
-
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <div class="elementor-element elementor-element-qwvpkvm elementor-widget elementor-widget-text-editor"
-                                                                                                                    data-id="qwvpkvm"
-                                                                                                                    data-element_type="widget"
-                                                                                                                    data-widget_type="text-editor.default">
-                                                                                                                    <div
-                                                                                                                        class="elementor-widget-container">
-                                                                                                                        <div
-                                                                                                                            class="elementor-text-editor elementor-clearfix">
-                                                                                                                            <div>
-                                                                                                                                SAVE
-                                                                                                                                OVER
-                                                                                                                                $20.00
-                                                                                                                                ON
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <div class="elementor-element elementor-element-mzeejlm elementor-widget elementor-widget-text-editor"
-                                                                                                                    data-id="mzeejlm"
-                                                                                                                    data-element_type="widget"
-                                                                                                                    data-widget_type="text-editor.default">
-                                                                                                                    <div
-                                                                                                                        class="elementor-widget-container">
-                                                                                                                        <div
-                                                                                                                            class="elementor-text-editor elementor-clearfix">
-                                                                                                                            <div>
-                                                                                                                                Jeans
-                                                                                                                                &amp;
-                                                                                                                                Denim
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div class="elementor-element elementor-element-yiiksbp elementor-column elementor-col-20 elementor-top-column"
-                                                                                                        data-id="yiiksbp"
-                                                                                                        data-element_type="column">
-                                                                                                        <div
-                                                                                                            class="elementor-column-wrap elementor-element-populated">
-                                                                                                            <div
-                                                                                                                class="elementor-widget-wrap">
-                                                                                                                <div class="elementor-element elementor-element-mmzary3 elementor-widget elementor-widget-image"
-                                                                                                                    data-id="mmzary3"
-                                                                                                                    data-element_type="widget"
-                                                                                                                    data-widget_type="image.default">
-                                                                                                                    <div
-                                                                                                                        class="elementor-widget-container">
-                                                                                                                        <div
-                                                                                                                            class="elementor-image">
-
-                                                                                                                            <a
-                                                                                                                                href="87-cardigans.html">
-
-                                                                                                                                <img src="https://ik.imagekit.io/promokit/Menu/menu_image05_IpD-digo2.webp"
-                                                                                                                                    loading="lazy"
-                                                                                                                                    alt=""
-                                                                                                                                    width="1000"
-                                                                                                                                    height="1000">
-                                                                                                                            </a>
-
-
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <div class="elementor-element elementor-element-vrnm4m1 elementor-widget elementor-widget-text-editor"
-                                                                                                                    data-id="vrnm4m1"
-                                                                                                                    data-element_type="widget"
-                                                                                                                    data-widget_type="text-editor.default">
-                                                                                                                    <div
-                                                                                                                        class="elementor-widget-container">
-                                                                                                                        <div
-                                                                                                                            class="elementor-text-editor elementor-clearfix">
-                                                                                                                            <div>
-                                                                                                                                Discover
-                                                                                                                                more
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <div class="elementor-element elementor-element-h17w6cz elementor-widget elementor-widget-text-editor"
-                                                                                                                    data-id="h17w6cz"
-                                                                                                                    data-element_type="widget"
-                                                                                                                    data-widget_type="text-editor.default">
-                                                                                                                    <div
-                                                                                                                        class="elementor-widget-container">
-                                                                                                                        <div
-                                                                                                                            class="elementor-text-editor elementor-clearfix">
-                                                                                                                            <div>
-                                                                                                                                T-shirts &amp;
-                                                                                                                                Tops
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div class="elementor-element elementor-element-ihrlbeu elementor-column elementor-col-20 elementor-top-column"
-                                                                                                        data-id="ihrlbeu"
-                                                                                                        data-element_type="column">
-                                                                                                        <div
-                                                                                                            class="elementor-column-wrap elementor-element-populated">
-                                                                                                            <div
-                                                                                                                class="elementor-widget-wrap">
-                                                                                                                <div class="elementor-element elementor-element-vrsqbrs elementor-widget elementor-widget-image"
-                                                                                                                    data-id="vrsqbrs"
-                                                                                                                    data-element_type="widget"
-                                                                                                                    data-widget_type="image.default">
-                                                                                                                    <div
-                                                                                                                        class="elementor-widget-container">
-                                                                                                                        <div
-                                                                                                                            class="elementor-image">
-
-                                                                                                                            <a
-                                                                                                                                href="87-cardigans.html">
-
-                                                                                                                                <img src="https://ik.imagekit.io/promokit/Menu/menu_image01_3c_fuRCZNy.webp"
-                                                                                                                                    loading="lazy"
-                                                                                                                                    alt=""
-                                                                                                                                    width="1000"
-                                                                                                                                    height="1000">
-                                                                                                                            </a>
-
-
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <div class="elementor-element elementor-element-yblmrkh elementor-widget elementor-widget-text-editor"
-                                                                                                                    data-id="yblmrkh"
-                                                                                                                    data-element_type="widget"
-                                                                                                                    data-widget_type="text-editor.default">
-                                                                                                                    <div
-                                                                                                                        class="elementor-widget-container">
-                                                                                                                        <div
-                                                                                                                            class="elementor-text-editor elementor-clearfix">
-                                                                                                                            <div>
-                                                                                                                                HOT
-                                                                                                                                TRENDS
-                                                                                                                                TO
-                                                                                                                                TRY
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <div class="elementor-element elementor-element-rvouorz elementor-widget elementor-widget-text-editor"
-                                                                                                                    data-id="rvouorz"
-                                                                                                                    data-element_type="widget"
-                                                                                                                    data-widget_type="text-editor.default">
-                                                                                                                    <div
-                                                                                                                        class="elementor-widget-container">
-                                                                                                                        <div
-                                                                                                                            class="elementor-text-editor elementor-clearfix">
-                                                                                                                            <div>
-                                                                                                                                Accessories
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div class="elementor-element elementor-element-ymmvwmf elementor-column elementor-col-20 elementor-top-column"
-                                                                                                        data-id="ymmvwmf"
-                                                                                                        data-element_type="column">
-                                                                                                        <div
-                                                                                                            class="elementor-column-wrap elementor-element-populated">
-                                                                                                            <div
-                                                                                                                class="elementor-widget-wrap">
-                                                                                                                <div class="elementor-element elementor-element-jbyegye elementor-widget elementor-widget-image"
-                                                                                                                    data-id="jbyegye"
-                                                                                                                    data-element_type="widget"
-                                                                                                                    data-widget_type="image.default">
-                                                                                                                    <div
-                                                                                                                        class="elementor-widget-container">
-                                                                                                                        <div
-                                                                                                                            class="elementor-image">
-
-                                                                                                                            <a
-                                                                                                                                href="87-cardigans.html">
-
-                                                                                                                                <img src="https://ik.imagekit.io/promokit/Menu/menu_image01_3c_fuRCZNy.webp"
-                                                                                                                                    loading="lazy"
-                                                                                                                                    alt=""
-                                                                                                                                    width="1000"
-                                                                                                                                    height="1000">
-                                                                                                                            </a>
-
-
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <div class="elementor-element elementor-element-ewmixwq elementor-widget elementor-widget-text-editor"
-                                                                                                                    data-id="ewmixwq"
-                                                                                                                    data-element_type="widget"
-                                                                                                                    data-widget_type="text-editor.default">
-                                                                                                                    <div
-                                                                                                                        class="elementor-widget-container">
-                                                                                                                        <div
-                                                                                                                            class="elementor-text-editor elementor-clearfix">
-                                                                                                                            <div>
-                                                                                                                                STARTING
-                                                                                                                                AT
-                                                                                                                                $40.00
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <div class="elementor-element elementor-element-imjzckp elementor-widget elementor-widget-text-editor"
-                                                                                                                    data-id="imjzckp"
-                                                                                                                    data-element_type="widget"
-                                                                                                                    data-widget_type="text-editor.default">
-                                                                                                                    <div
-                                                                                                                        class="elementor-widget-container">
-                                                                                                                        <div
-                                                                                                                            class="elementor-text-editor elementor-clearfix">
-                                                                                                                            <div>
-                                                                                                                                Outerwear
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
+                                                                            <div class="categories-grid">
+                                                                                @foreach ($categories as $category)
+                                                                                    <div class="category-item">
+                                                                                        <a href="{{ route('frontend.categories.show', $category->slug) }}">
+                                                                                            {{ $category->name }}
+                                                                                        </a>
                                                                                     </div>
-                                                                                </div>
+                                                                                @endforeach
                                                                             </div>
-
                                                                         </div>
                                                                     </li>
                                                                 </ul>

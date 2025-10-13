@@ -6,7 +6,7 @@
                 data-id="25f1ee45" data-element_type="column">
                 <div class="elementor-column-wrap elementor-element-populated">
                     <div class="elementor-widget-wrap">
-                        <div class="elementor-element elementor-element-28c3492 elementor-widget elementor-widget-pkblog"
+                        {{-- <div class="elementor-element elementor-element-28c3492 elementor-widget elementor-widget-pkblog"
                             data-id="28c3492" data-element_type="widget"
                             data-settings="{&quot;slides_to_show&quot;:&quot;2&quot;,&quot;autoplay&quot;:&quot;no&quot;,&quot;slides_to_show_tablet&quot;:&quot;1&quot;,&quot;slides_to_show_mobile&quot;:&quot;1&quot;,&quot;slides_to_scroll&quot;:1,&quot;navigation&quot;:&quot;arrows&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;infinite&quot;:&quot;yes&quot;,&quot;direction&quot;:&quot;ltr&quot;,&quot;speed1&quot;:500}"
                             data-widget_type="pkblog.default">
@@ -123,7 +123,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="elementor-element elementor-element-2715a4f8 elementor-widget elementor-widget-pkbrands"
                             data-id="2715a4f8" data-element_type="widget"
                             data-settings="{&quot;slides_to_show&quot;:&quot;7&quot;,&quot;slides_to_show_tablet&quot;:&quot;3&quot;,&quot;slides_to_show_mobile&quot;:&quot;1&quot;,&quot;slides_to_scroll_tablet&quot;:&quot;2&quot;,&quot;slides_to_scroll_mobile&quot;:&quot;1&quot;,&quot;slides_to_scroll&quot;:1,&quot;navigation&quot;:&quot;arrows&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;infinite&quot;:&quot;yes&quot;,&quot;direction&quot;:&quot;ltr&quot;,&quot;speed1&quot;:500}"

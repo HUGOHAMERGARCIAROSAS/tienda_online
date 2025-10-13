@@ -4,6 +4,7 @@
 <head>
     @include('template_frontend.styles')
     @include('template_frontend.scripts')
+    
 </head>
 <body id="index"
     class="lang-en country-us currency-usd layout-full-width page-index tax-display-enabled pm-details-layout1 category-page-width-fixed"
@@ -47,6 +48,9 @@
 
     @include('template_frontend.partials.password_feedback')
 
+
+    
+    
 
 </body>
 

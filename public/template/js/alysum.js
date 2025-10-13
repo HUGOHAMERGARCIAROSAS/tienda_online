@@ -9,7 +9,8 @@ const selectors = {
     pkSlick: '.pk-slick-carousel',
 };
 const classes = {
-    inProgress: 'in_progress',
+    // inProgress: 'in_progress',
+    inProgress: 'a',
     ddHover: 'dd_el_hover',
     modalOpen: 'modal-open',
     active: 'active',
@@ -51,6 +52,9 @@ const loadFeatures = async (featuresMap) => {
         
 
     const featuresPromises = featuresToLoad.map((feature) => {
+        if(feature === 'productSpin') {
+            return;
+        }
         import(`/template/js/${feature}.js`).then((m) => m.default());
     });
 
