@@ -23,9 +23,7 @@
                             data-id="b50481f" data-element_type="widget" data-widget_type="text-editor.default">
                             <div class="elementor-widget-container">
                                 <div class="elementor-text-editor elementor-clearfix">
-                                    <p>Quisque euismod pretium lacinia. Vivamus sollicitudin
-                                        placerat sit amet sagittis. Mauris ac ante porta,
-                                        pellentesque lacus</p>
+                                    <p>Descubre la versión más radiante de ti misma. En MJ Glam Makeup & Beauty transformamos momentos en recuerdos, resaltando tu esencia con arte, pasión y un toque de glamour.</p>
                                 </div>
                             </div>
                         </div>
@@ -39,7 +37,7 @@
                                     <h2 class="module-title module-title-center"><span>PRODUCTOS DESTACADOS</span></h2>
                                     <div class="pk-ce-widget view_grid pk-ce-carousel elementor-image-carousel slick-arrows-inside"
                                         data-slider_options={&quot;slidesToShow&quot;:5,&quot;slidesToShowTablet&quot;:3,&quot;slidesToShowMobile&quot;:1,&quot;slidesToScroll&quot;:1,&quot;slidesToScrollTablet&quot;:2,&quot;slidesToScrollMobile&quot;:1,&quot;autoplaySpeed&quot;:5000,&quot;autoplay&quot;:true,&quot;infinite&quot;:true,&quot;pauseOnHover&quot;:true,&quot;speed&quot;:500,&quot;arrows&quot;:true,&quot;dots&quot;:false,&quot;rtl&quot;:false,&quot;fade&quot;:false}>
-                                        @foreach ($productos_destacados as $key => $product)    
+                                        @foreach ($productos_destacados as $key => $product)
                                             <article class="product-miniature js-product-miniature js-product new women"
                                                 data-id-product="6" data-id-product-attribute="31">
                                                 <div class="thumbnail-container relative">

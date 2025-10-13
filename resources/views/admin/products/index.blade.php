@@ -80,20 +80,34 @@
                     url: "{{ route('admin.products.data') }}",
                     type: 'GET',
                     data: function (d) {
-                        d.name = $('#filter_name').val(); 
-                        d.sku = $('#filter_sku').val();    
+                        d.name = $('#filter_name').val();
+                        d.sku = $('#filter_sku').val();
                     },
                     error: function (xhr, error, code) {
                         console.log(error);
                     }
                 },
                 columns: [
-                    { data: 'id', name: 'id' },
+                    { data: 'id', name: 'id',
+                        render: function (data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        }
+                     },
                     { data: 'name', name: 'name' },
                     { data: 'price', name: 'price' },
                     { data: 'discount_price', name: 'discount_price' },
                     { data: 'sku', name: 'sku' },
-                    { data: 'status', name: 'status' },
+                    {
+                        data: 'status',
+                        name: 'status',
+                        render: function (data, type, row) {
+                            if (row.status == 1) {
+                                return '<span class="badge bg-label-success">Activo</span>';
+                            } else {
+                                return '<span class="badge bg-label-danger">Inactivo</span>';
+                            }
+                        },
+                    },
                     { data: 'created_at', name: 'created_at' },
                     {
                         data: 'acciones',
@@ -113,10 +127,52 @@
             });
 
             $('#filter_name, #filter_sku').on('keyup', function () {
-                table.ajax.reload(); 
+                table.ajax.reload();
             });
 
-           
+
+        });
+
+        $(document).on('click', '.btn-edit', function () {
+            let id = $(this).data('id');
+            let url = "{{ route('admin.products.edit', ':id') }}";
+            url = url.replace(':id', id);
+            window.location.href = url;
+        });
+
+        $(document).on('click', '.btn-delete', function () {
+            let id = $(this).data('id');
+            swal.fire({
+                title: 'Eliminar producto',
+                text: '¿Estás seguro de que deseas eliminar este producto?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    fetch("{{ route('admin.products.delete', ':id') }}".replace(':id', id), {
+                        method: 'DELETE',
+                        headers: {
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            swal.fire('Eliminado', data.message, 'success');
+                            $('#commonTable').DataTable().ajax.reload();
+                        } else {
+                            swal.fire('Error', data.message, 'error');
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+                }
+            });
         });
     </script>
 

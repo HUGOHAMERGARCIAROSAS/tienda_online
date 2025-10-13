@@ -15,7 +15,7 @@
                                     dir="ltr">
                                     <div class="pk-ce-widget view_grid pk-ce-carousel elementor-image-carousel widget-pkslider slick-arrows-inside"
                                         data-slider_options={&quot;slidesToShow&quot;:1,&quot;slidesToShowTablet&quot;:1,&quot;slidesToShowMobile&quot;:1,&quot;slidesToScroll&quot;:1,&quot;slidesToScrollTablet&quot;:2,&quot;slidesToScrollMobile&quot;:1,&quot;autoplaySpeed&quot;:5000,&quot;autoplay&quot;:false,&quot;infinite&quot;:true,&quot;pauseOnHover&quot;:true,&quot;speed&quot;:500,&quot;arrows&quot;:true,&quot;dots&quot;:false,&quot;rtl&quot;:false,&quot;fade&quot;:true}>
-                                        @foreach ($sliders as $key=>$slider)    
+                                        @foreach ($sliders as $key=>$slider)
                                             <div class="pk-slider-item elementor-repeater-item-1c11511 h-100 w-100 oh">
                                                 <div class="pk-slide-bg h-100 w-100"
                                                     style="background-position: center center;">

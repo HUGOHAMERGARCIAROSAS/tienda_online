@@ -5,16 +5,18 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+
 
 class ProductController extends Controller
 {
     public function index(){
-        
+
         return view('admin.products.index');
     }
 
     public function getData(Request $request){
-        
+
         $consulta = DB::table('products')->select('id', 'name', 'price', 'discount_price', 'sku', 'status', 'created_at');
         if (!empty($request->name)) {
             $consulta->where('name', 'LIKE', '%' . $request->name . '%');
@@ -75,7 +77,7 @@ class ProductController extends Controller
                 'message' => 'El slug ya existe'
             ]);
         }
-        
+
         $id = DB::table('products')->insertGetId([
             'category_id' => $request->category,
             'name' => $request->name,
@@ -91,7 +93,7 @@ class ProductController extends Controller
             'created_at' => now()
         ]);
 
-        if(!$id){ 
+        if(!$id){
             return response()->json([
                 'status' => 'error',
                 'message' => 'Error al crear el producto'
@@ -119,6 +121,93 @@ class ProductController extends Controller
         }
 
 
+        return response()->json([
+            'status' => 'success'
+        ]);
+    }
+    public function edit($id){
+        $product = DB::table('products')->where('id', $id)->first();
+        $categories = DB::table('categories')
+            ->whereNotNull('categories.parent_id')
+            ->where('categories.status', 1)
+            ->where('categories.parent_id', 1)
+            ->orderBy('categories.name', 'ASC')
+            ->get();
+        $images = DB::table('product_images')->where('product_id', $id)->get();
+        return view('admin.products.edit')->with(compact('product', 'categories','images'));
+    }
+    public function deleteImage(Request $request){
+        $image = DB::table('product_images')->where('id', $request->id)->first();
+        if (!$image) {
+            return response()->json(['status' => 'error', 'message' => 'Imagen no encontrada'], 404);
+        }
+        $path = public_path($image->url);
+        if (File::exists($path)) {
+            File::delete($path);
+        }
+        DB::table('product_images')->where('id', $request->id)->delete();
+        return response()->json([
+            'status' => 'success'
+        ]);
+    }
+
+    public function update(Request $request, $id){
+        $slug = $request->slug;
+        $slug_count = DB::table('products')->where('slug', $slug)->where('id', '!=', $id)->count();
+        if ($slug_count > 0) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'El slug ya existe'
+            ]);
+        }
+
+        DB::table('products')->where('id', $id)->update([
+            'category_id' => $request->category,
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'price' => $request->precio,
+            'description' => $request->description,
+            'discount_price' => $request->precio_descuento,
+            'sku' => $request->sku,
+            'status' => $request->status,
+            'is_featured' => $request->is_featured,
+            'is_new' => $request->is_new,
+            'is_offer' => $request->is_offer,
+            'updated_at' => now()
+        ]);
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $key=>$file) {
+                $image = time(). '_' . $file->getClientOriginalName();
+                $file->move(public_path('template_admin/images/product'), $image);
+
+                if($key==0){
+                    $count = DB::table('product_images')->where('product_id', $id)->count();
+                    if ($count == 0) {
+                        DB::table('products')->where('id', $id)->update([
+                            'url' => 'template_admin/images/product/' . $image
+                        ]);
+                    }
+                }
+
+                DB::table('product_images')->insert([
+                    'product_id' => $id,
+                    'url' => 'template_admin/images/product/' . $image,
+                    'created_at' => now(),
+                    'is_primary' => 0
+                ]);
+            }
+        }
+
+        return response()->json([
+            'status' => 'success'
+        ]);
+    }
+
+    public function delete($id){
+        DB::table('products')->where('id', $id)->update([
+            'status' => 0
+        ]);
         return response()->json([
             'status' => 'success'
         ]);

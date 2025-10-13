@@ -27,7 +27,6 @@ Route::middleware('guest:web')->group(function () {
 
 Route::middleware('auth:web')->group(function () {
     Route::get('/client/dashboard', [ClientLoginController::class, 'dashboard'])->name('client.dashboard');
-
     Route::post('/logout', [ClientLoginController::class, 'logout'])->name('logout');
 });
 
@@ -38,7 +37,6 @@ Route::prefix('admin')->group(function () {
     Route::middleware('guest:admin')->group(function () {
         Route::get('/login', [AdminLoginController::class, 'showLoginForm'])->name('admin.login');
         Route::post('/login', [AdminLoginController::class, 'login']);
-
         Route::get('/register',[AdminLoginController::class, 'showRegisterForm'])->name('admin.register');
         Route::post('/register',[AdminLoginController::class, 'register'])->name('admin.register');
     });
@@ -60,7 +58,11 @@ Route::prefix('admin')->group(function () {
         Route::get('admin/products/create', [ProductController::class, 'create'])->name('admin.products.create');
         Route::get('admin_products_data', [ProductController::class, 'getData'])->name('admin.products.data');
         Route::post('admin/products/store', [ProductController::class, 'store'])->name('admin.products.store');
-
+        Route::get('admin/products/edit/{id}', [ProductController::class, 'edit'])->name('admin.products.edit');
+        Route::post('admin/products/update/{id}', [ProductController::class, 'update'])->name('admin.products.update');
+        Route::delete('admin/products/delete/{id}', [ProductController::class, 'delete'])->name('admin.products.delete');
+        Route::post('admin/products/status/{id}', [ProductController::class, 'updateStatus'])->name('admin.products.status');
+        Route::post('admin/products/deleteImage', [ProductController::class, 'deleteImage'])->name('admin.products.deleteImage');
 
 
 
