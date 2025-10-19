@@ -1,3 +1,20 @@
+<style>
+    .thumbnail.product-thumbnail {
+        width: 100%;
+        height: 300px; 
+        overflow: hidden;
+        position: relative;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+    }
+    .thumbnail.product-thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+</style>
+
 <div class="elementor-element elementor-element-68b581d3 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
     data-id="68b581d3" data-element_type="section">
     <div class="elementor-container elementor-column-gap-default">
@@ -48,42 +65,13 @@
                                                                 <source srcset="{{ asset($product->url) }}"
                                                                     type="image/webp">
                                                                 <img src="{{ asset($product->url) }}"
-                                                                    width="500" height="650"
+                                                                    width="500"
                                                                     alt="{{ $product->name}}"
                                                                     loading="lazy"
                                                                     data-image-large-src="{{ asset($product->url) }}"
                                                                     data-image-medium-src="{{ asset($product->url) }}"
                                                                     class="db w-100">
                                                             </picture>
-                                                            <picture class="cover-image smooth02" title="{{$product->name}}">
-                                                                <source
-                                                                    srcset="{{ asset($product->url) }}"
-                                                                    type="image/webp">
-                                                                <img src="{{ asset($product->url) }}"
-                                                                    width="500" height="650"
-                                                                    alt="{{ $product->name}}"
-                                                                    loading="lazy"
-                                                                    data-image-large-src="{{ asset($product->url) }}"
-                                                                    data-image-medium-src="{{ asset($product->url) }}"
-                                                                    class="db w-100">
-                                                            </picture>
-                                                            <picture class="cover-image smooth02" title="{{$product->name}}">
-                                                                <source
-                                                                    srcset="{{ asset($product->url) }}"
-                                                                    type="image/webp">
-                                                                <img src="{{ asset($product->url) }}"
-                                                                    width="500" height="650"
-                                                                    alt="{{ $product->name}}"
-                                                                    loading="lazy"
-                                                                    data-image-large-src="{{ asset($product->url) }}"
-                                                                    data-image-medium-src="{{ asset($product->url) }}"
-                                                                    class="db w-100">
-                                                            </picture>
-                                                            <span class="pmimage-switcher flex-container">
-                                                                <span class="relative db flex-grow1"></span>
-                                                                <span class="relative db flex-grow1"></span>
-                                                                <span class="relative db flex-grow1"></span>
-                                                            </span>
                                                         </a>
                                                         <div class="product-actions show-on-hover scale-on-hover">
                                                             <button class="btn btn-primary add-to-cart"

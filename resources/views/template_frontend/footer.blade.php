@@ -1,6 +1,4 @@
 <footer id="footer" class="relative js-footer">
-
-
     <div data-elementor-type="page" data-elementor-id="153010000"
         class="elementor elementor-153010000 elementor-bc-flex-widget" data-elementor-settings="[]">
         <div class="elementor-inner">
@@ -22,7 +20,7 @@
                                                     <h2 class="module-title"><span>Manténgase actualizado</span></h2>
                                                     <div class="pk-ce-widget view_grid pk-grid">
                                                         <div class="newsletter-widget flex-container flex-column">
-                                                            <form action="https://alysum.promokit.eu/" method="post"
+                                                            <form  id="newsletter-form-footer"
                                                                 class="newsletter-form relative flex-container">
                                                                 <div class="relative pknlinput-wrap">
                                                                     <input class="newsletter-input form-control"
@@ -31,17 +29,17 @@
                                                                         placeholder="Tu correo electrónico"
                                                                         required="required" value="">
                                                                     <label for="newsletter-input-footer"
-                                                                        aria-label="Your email address">
+                                                                        aria-label="Ingresa tu correo electrónico">
                                                                     </label>
-                                                                    <button class="submit-widget-newsletter"
+                                                                    <button type="button" onclick="enviarFormularioContacto()" id="newsletter-submit" class="submit-widget-newsletter"
                                                                         aria-label="Submit subscription">
                                                                         <svg class="svgic">
                                                                             <use
                                                                                 href="{{ asset('template/images/lib.svg#right-arrow-thin') }}">
                                                                             </use>
-                                                                        </svg> </button>
+                                                                        </svg>
+                                                                    </button>
                                                                 </div>
-
                                                             </form>
                                                             <input type="hidden" class="agree-gdpr"
                                                                 value="You have to agree with our GDPR Policy">
@@ -55,8 +53,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="elementor-element elementor-element-2e6077f4 elementor-column elementor-col-25 elementor-top-column"
-                                data-id="2e6077f4" data-element_type="column">
+                            <div class="elementor-element elementor-element-3ae1f38a elementor-column elementor-col-25 elementor-top-column"
+                                data-id="3ae1f38a" data-element_type="column">
                                 <div class="elementor-column-wrap elementor-element-populated">
                                     <div class="elementor-widget-wrap">
                                         <div class="elementor-element elementor-element-36f3dc9b elementor-align-left elementor-widget elementor-widget-pklinks"
@@ -64,25 +62,20 @@
                                             data-widget_type="pklinks.default">
                                             <div class="elementor-widget-container">
                                                 <div class="pk-ce-widget-wrapper" dir="ltr">
-                                                    <h2 class="module-title"><span>Servicio al cliente</span></h2>
+                                                    <h2 class="module-title"><span>Información</span></h2>
                                                     <div class="pk-ce-widget view_grid pk-grid">
                                                         <ul class="widget-pklinks w-100">
                                                             <li>
-                                                                <a href="content/2-legal-notice.html">Legal
-                                                                    Notice</a>
+                                                                <a href="#">Nosotros</a>
                                                             </li>
                                                             <li>
-                                                                <a href="content/4-about-us.html">About us</a>
+                                                                <a href="#">Categorías</a>
                                                             </li>
                                                             <li>
-                                                                <a href="content/5-secure-payment.html">Secure
-                                                                    payment</a>
+                                                                <a href="#">Productos Destacados</a>
                                                             </li>
                                                             <li>
-                                                                <a href="content/1-delivery.html">Delivery</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="sitemap.html">Sitemap</a>
+                                                                <a href="#">Productos Nuevos</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -92,42 +85,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="elementor-element elementor-element-59215d6 elementor-column elementor-col-25 elementor-top-column"
-                                data-id="59215d6" data-element_type="column">
-                                <div class="elementor-column-wrap elementor-element-populated">
-                                    <div class="elementor-widget-wrap">
-                                        <div class="elementor-element elementor-element-7042ff18 elementor-align-left elementor-widget elementor-widget-pklinks"
-                                            data-id="7042ff18" data-element_type="widget"
-                                            data-widget_type="pklinks.default">
-                                            <div class="elementor-widget-container">
-                                                <div class="pk-ce-widget-wrapper" dir="ltr">
-                                                    <h2 class="module-title"><span>Mi cuenta</span></h2>
-                                                    <div class="pk-ce-widget view_grid pk-grid">
-                                                        <ul class="widget-pklinks w-100">
-                                                            <li>
-                                                                <a href="prices-drop.html">Prices drop</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="new-products.html">New products</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="best-sales.html">Best sales</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="contact-us.html">Contact us</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="sitemap.html">Sitemap</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="elementor-element elementor-element-697fa661 elementor-column elementor-col-25 elementor-top-column"
+                            <div class="elementor-element elementor-element-3ae1f38a elementor-column elementor-col-25 elementor-top-column"
                                 data-id="697fa661" data-element_type="column">
                                 <div class="elementor-column-wrap elementor-element-populated">
                                     <div class="elementor-widget-wrap">
@@ -135,7 +93,7 @@
                                             data-id="4c0fc551" data-element_type="widget"
                                             data-widget_type="pktitle.default">
                                             <div class="elementor-widget-container">
-                                                <h2 class="module-title"><span>Detalles de contacto</span></h2>
+                                                <h2 class="module-title"><span>Contáctanos</span></h2>
                                             </div>
                                         </div>
                                         <div class="elementor-element elementor-element-57319cbf elementor-widget elementor-widget-text-editor"
@@ -146,28 +104,24 @@
                                                     <div class="text-block-wrap">
                                                         <div class="tb-sect">
                                                             <div class="tb-sect-icon"><img
-                                                                    src="https://ik.imagekit.io/promokit/Contact/phone-white_lOXpAwZdE.svg"
+                                                                    src="{{asset('template_admin/images/phone-white_lOXpAwZdE.svg')}}"
                                                                     alt="telephone_1" width="17" height="17"
                                                                     loading="lazy" /></div>
-                                                            <div class="tb-sect-text">0203 - 980 - 14 -
-                                                                79<br />0203
-                                                                - 478 - 12 - 96</div>
+                                                            <div class="tb-sect-text">987654321</div>
                                                         </div>
                                                         <div class="tb-sect">
                                                             <div class="tb-sect-icon"><img
-                                                                    src="https://ik.imagekit.io/promokit/Contact/mail_white_kT87jOSLP.svg"
+                                                                    src="{{asset('template_admin/images/mail_white_kT87jOSLP.svg')}}"
                                                                     alt="envelope.png" width="17" height="17"
                                                                     loading="lazy" /></div>
-                                                            <div class="tb-sect-text">
-                                                                alysum_shop@gmail.com<br />alysum@hotmail.com</div>
+                                                            <div class="tb-sect-text">mjglam@gmail.com</div>
                                                         </div>
                                                         <div class="tb-sect">
                                                             <div class="tb-sect-icon"><img
-                                                                    src="https://ik.imagekit.io/promokit/Contact/whatsapp_white_btvMM83jI.svg"
+                                                                    src="{{asset('template_admin/images/whatsapp_white_btvMM83jI.svg')}}"
                                                                     alt="whatsapp.png" width="17" height="17"
                                                                     loading="lazy" /></div>
-                                                            <div class="tb-sect-text">
-                                                                alysum_shop_contact<br />alysum_support</div>
+                                                            <div class="tb-sect-text">987654321</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -193,7 +147,8 @@
                                             data-widget_type="text-editor.default">
                                             <div class="elementor-widget-container">
                                                 <div class="elementor-text-editor elementor-clearfix">
-                                                    <p style="margin: 0;"><span style="color: #d4d4d4;">Pago seguro y confiable</span></p>
+                                                    <p style="margin: 0;"><span style="color: #d4d4d4;">Pago seguro y
+                                                            confiable</span></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -251,7 +206,48 @@
             </div>
         </div>
     </div>
-
-
-
 </footer>
+
+<script>
+    function enviarFormularioContacto() {
+        event.preventDefault();
+        let email = document.getElementById("newsletter-input-footer").value;
+        let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!regex.test(email)) {
+            swal.fire("Error", "El correo electrónico no es válido", "error");
+            return;
+        }
+
+        let data = {
+            email: email
+        };
+
+        fetch('{{ route('frontend.suscriptores') }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status == 'success') {
+                swal.fire("Éxito", `${data.message}`, "success");
+                document.getElementById('newsletter-input-footer').value = '';
+            } else {
+                swal.fire("Error", `${data.message}`, "error");
+            }
+        })
+        .catch(error => {
+            swal.fire("Error", "Ha ocurrido un error al suscribirte", "error");
+        });
+            
+    }
+
+    document.getElementById('newsletter-input-footer').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            enviarFormularioContacto();
+        }
+    });
+</script>

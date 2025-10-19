@@ -16,7 +16,7 @@
                 
                 {{-- @include('home.informacion') --}}
 
-                @include('home.testimonios')
+                {{-- @include('home.testimonios') --}}
 
                 @include('home.blog')
 

@@ -80,4 +80,25 @@ class HomeController extends Controller
         return view('frontend.orders.show')->with(compact('categories'));
     }
 
+    public function suscriptores(Request $request){
+
+        $existingEmail = DB::table('suscriptores')->where('email', $request->email)->first();
+        if ($existingEmail) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'El email ya existe'
+            ]);
+        }
+
+        DB::table('suscriptores')->insert([
+            'email' => $request->email,
+            'created_at' => now()
+        ]);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Gracias por suscribirte'
+        ]);
+    }
+
 }

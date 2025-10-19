@@ -21,6 +21,8 @@ Route::middleware('guest:web')->group(function () {
     Route::get('/products/{slug}', [HomeController::class, 'showProducts'])->name('frontend.product.show');
 
     Route::get('/cart', [HomeController::class, 'cart'])->name('frontend.cart');
+
+    Route::post('/suscriptores', [HomeController::class, 'suscriptores'])->name('frontend.suscriptores');
 });
 
 

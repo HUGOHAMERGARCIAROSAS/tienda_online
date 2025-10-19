@@ -7195,7 +7195,7 @@ body.tax-display-enabled #wrapper #products .thumbnail-container {
 
 .pk-fixed-bottom {
     bottom: 20px;
-    right: 20px;
+    right: 40px;
     z-index: 99;
     flex-direction: column-reverse;
     gap: 10px;

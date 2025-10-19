@@ -5,7 +5,7 @@
                 data-pktabgroup="el-cart" data-pktype="sidebar" aria-label="Cart">
                 <svg class="svgic">
                     <use href="{{ asset('template/images/lib.svg#cart') }}"></use>
-                </svg> <span>Cart</span>
+                </svg> <span>Carrito</span>
                 <span class="cart-products-count cart-counter absolute" data-productsnum="0">10</span>
             </button>
         </li>
@@ -16,7 +16,7 @@
                 data-pktabgroup="el-myaccount" data-pktype="sidebar" aria-label="Account">
                 <svg class="svgic">
                     <use href="{{ asset('template/images/lib.svg#myaccount') }}"></use>
-                </svg> <span>Account</span>
+                </svg> <span>Cuenta</span>
             </button>
         </li>
 
@@ -26,7 +26,7 @@
                 data-pktabgroup="el-search" data-pktype="sidebar" aria-label="Search">
                 <svg class="svgic">
                     <use href="{{ asset('template/images/lib.svg#search') }}"></use>
-                </svg> <span>Search</span>
+                </svg> <span>Buscar</span>
             </button>
         </li>
 
@@ -37,17 +37,6 @@
                 <svg class="svgic">
                     <use href="{{ asset('template/images/lib.svg#pknav') }}"></use>
                 </svg> <span>Menu</span>
-            </button>
-        </li>
-
-
-        <li class="el-favorites_single">
-            <button class="flex-container flex-column align-items-center relative"
-                data-pktabname="el-favorites_single" data-pktabgroup="el-favorites_single" data-pktype="sidebar"
-                aria-label="Favorites">
-                <svg class="svgic">
-                    <use href="{{ asset('template/images/lib.svg#favorites_single') }}"></use>
-                </svg> <span>Favorites</span>
             </button>
         </li>
 

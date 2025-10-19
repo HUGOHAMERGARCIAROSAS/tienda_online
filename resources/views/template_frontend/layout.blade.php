@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es-ES" data-overlayscrollbars-initialize>
+<html lang="es-ES" data-overlayscrollbars-initialize style="padding-right: 0px!important;">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
     @include('template_frontend.styles')

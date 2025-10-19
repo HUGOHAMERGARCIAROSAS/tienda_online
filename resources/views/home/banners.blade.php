@@ -27,16 +27,15 @@
                                                     <div class="pk-slide-content-wrapper flex-container flex-column">
                                                         <div class="pk-slide-title no-animation animated"
                                                             data-animationin="-">
-                                                            EXCLUSIVO
                                                         </div>
                                                         <div class="pk-slide-description no-animation animated"
                                                             data-animationin="">
                                                             <div
                                                                 style="font-size: 3vw; line-height: 1em; color: #5e5e5e; text-align: right;">
                                                                 <span
-                                                                    style="font-weight: 100;">descuentos</span><br><span
-                                                                    style="font-weight: 100;">&amp;</span>
-                                                                <strong style="font-weight: 900;">OFERTAS</strong>
+                                                                    style="font-weight: 100;"></span><br><span
+                                                                    style="font-weight: 100;"></span>
+                                                                <strong style="font-weight: 900;"></strong>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -75,16 +74,15 @@
                                                     <div class="pk-slide-content-wrapper flex-container flex-column">
                                                         <div class="pk-slide-title no-animation animated"
                                                             data-animationin="-">
-                                                            COMPRAR AHORA
                                                         </div>
                                                         <div class="pk-slide-description no-animation animated"
                                                             data-animationin="">
                                                             <div
                                                                 style="font-size: 3vw; line-height: 1em; color: #5e5e5e; text-align: right;">
-                                                                <span style="font-weight: 100;">ultimos
-                                                                    arribos</span><br><span
-                                                                    style="font-weight: 100;">&amp;</span>
-                                                                <strong style="font-weight: 900;">#MJGLAM</strong>
+                                                                <span style="font-weight: 100;">
+                                                                    </span><br><span
+                                                                    style="font-weight: 100;"></span>
+                                                                <strong style="font-weight: 900;"></strong>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -123,16 +121,15 @@
                                                     <div class="pk-slide-content-wrapper flex-container flex-column">
                                                         <div class="pk-slide-title no-animation animated"
                                                             data-animationin="-">
-                                                            VER MAS
                                                         </div>
                                                         <div class="pk-slide-description no-animation animated"
                                                             data-animationin="">
                                                             <div
                                                                 style="font-size: 3vw; line-height: 1em; color: #5e5e5e; text-align: right;">
-                                                                <span style="font-weight: 100;">atención
-                                                                    a</span><br><span
-                                                                    style="font-weight: 100;">&amp;</span>
-                                                                <strong style="font-weight: 900;">DETALLES</strong>
+                                                                <span style="font-weight: 100;">
+                                                                    </span><br><span
+                                                                    style="font-weight: 100;"></span>
+                                                                <strong style="font-weight: 900;"></strong>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -164,15 +161,14 @@
                                                     <div class="pk-slide-content-wrapper flex-container flex-column">
                                                         <div class="pk-slide-title no-animation animated"
                                                             data-animationin="-">
-                                                            DESCUBRE
                                                         </div>
                                                         <div class="pk-slide-description no-animation animated"
                                                             data-animationin="">
                                                             <div
                                                                 style="font-size: 3vw; line-height: 1em; color: #5e5e5e; text-align: right;">
-                                                                <span style="font-weight: 100;">estilos
-                                                                    que</span><br><strong
-                                                                    style="font-weight: 900;">INSPIRA</strong>
+                                                                <span style="font-weight: 100;">
+                                                                    </span><br><strong
+                                                                    style="font-weight: 900;"></strong>
                                                             </div>
                                                         </div>
                                                     </div>
