@@ -20,7 +20,8 @@ class ClientLoginController extends Controller
             ->where('status', 1)
             ->orderBy('name', 'ASC')
             ->get();
-        return view('client.dashboard')->with(compact('categories'));
+        $setting = DB::table('settings')->first();
+        return view('client.dashboard')->with(compact('categories','setting'));
     }
     public function showLoginForm()
     {
@@ -29,7 +30,8 @@ class ClientLoginController extends Controller
             ->where('status', 1)
             ->orderBy('name', 'ASC')
             ->get();
-        return view('auth.client-login')->with(compact('categories'));
+        $setting = DB::table('settings')->first();
+        return view('auth.client-login')->with(compact('categories','setting'));
     }
 
     public function login(Request $request)
@@ -61,7 +63,8 @@ class ClientLoginController extends Controller
             ->where('status', 1)
             ->orderBy('name', 'ASC')
             ->get();
-        return view('auth.client-register')->with(compact('categories'));
+         $setting = DB::table('settings')->first();
+        return view('auth.client-register')->with(compact('categories','setting'));
     }
 
     public function register(Request $request)

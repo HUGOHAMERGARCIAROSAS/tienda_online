@@ -2,7 +2,6 @@
 @section('content_style')
     <link rel="stylesheet" href="{{ asset('template/css/theme-6825b4844.css') }}" media="all">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="{{'template/css/cart.css'}}"/>
 @endsection
 @section('content')
     <div class="page-width top-content">
@@ -26,7 +25,7 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title mb-4">
-              <i class="bi bi-cart3 me-2"></i>Carrito de compras
+              <i class="bi bi-cart3 me-2"></i>Mis Datos
             </h4>
             <div id="cart-items" class="d-flex flex-column gap-3"></div>
             <div id="empty-cart" class="text-center text-muted py-4 d-none">
@@ -41,31 +40,19 @@
           <div class="card-body summary">
             <h4 class="card-title mb-4">Resumen de la compra</h4>
             <p class="fs-5">
-                <strong>Nombre:</strong> {{ auth()->user()->name }}
-            </p>
-            <p class="fs-5">
-                <strong>Correo:</strong> {{ auth()->user()->email }}
-            </p>
-            <p class="fs-5">
               <strong>Total:</strong> <span id="total">S/ 0.00</span>
             </p>
-            @if(auth()->check())
-                <button class="btn btn-checkout mt-3" id="btnFinalizar">
-                    Finalizar compra
-                </button>
-            @else
-                <a href="{{ route('login') }}" class="btn btn-checkout mt-3">
-                    Iniciar sesión
-                </a>
-            @endif
+            <button class="btn btn-checkout mt-3" id="btnFinalizar">
+              FINALIZAR COMPRA
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 @endsection
 @section('content_script')
     <script src="{{ asset('template/js/bottom-38a1a7843.js') }}"></script>
-    <script src="{{ asset('template/js/cart.js') }}"></script>
 @endsection

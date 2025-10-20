@@ -4,7 +4,7 @@
     <style>
         .thumbnail.product-thumbnail {
             width: 100%;
-            height: 300px; 
+            height: 300px;
             overflow: hidden;
             position: relative;
             border-radius: 8px;
@@ -51,7 +51,7 @@
                                                     <a href="{{ route('frontend.categories.show', $category->slug) }}">
                                                         <picture>
                                                             <source srcset="{{ asset($category->url) }}" type="image/webp">
-                                                            <img src="{{ asset($category->url) }}" 
+                                                            <img src="{{ asset($category->url) }}"
                                                                 alt="{{ $category->name }}" loading="lazy"
                                                                 data-image-large-src="{{ asset($category->url) }}"
                                                                 data-image-medium-src="{{ asset($category->url) }}"

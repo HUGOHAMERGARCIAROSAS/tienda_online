@@ -68,7 +68,7 @@
                     </li>
                     <li role="tab">
                         <a class="smooth02" data-pktabname="el-search" data-pktabgroup="el-pknav-inner" style="padding: 10px 5px;"
-                            data-pktype="sidebar" href="#" title="Categorias">
+                            data-pktype="sidebar" href="{{ route('frontend.categories') }}" title="Categorias">
                             Categorías
                         </a>
                         <ul class="sub-menu list-unstyled">

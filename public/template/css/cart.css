@@ -1,0 +1,134 @@
+body {
+    background-color: #f8f9fa;
+    font-family: "Inter", sans-serif;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.btn-remove {
+    background-color: transparent;
+    color: #dc3545;
+    border: none;
+}
+
+.btn-remove:hover {
+    color: #a71d2a;
+}
+
+.summary p {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.summary strong {
+    color: #333;
+}
+
+.btn-checkout {
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.btn-checkout:hover {
+    background-color: #218838;
+}
+
+.qty-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.qty-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-weight: 600;
+    line-height: 1;
+}
+.qty-btn.btn-outline-secondary {
+    border-width: 1px;
+}
+
+.qty-input {
+    width: 52px;
+    height: 32px;
+    padding: 0;
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    .qty-btn {
+        width: 28px;
+        height: 28px;
+    }
+    .qty-input {
+        width: 44px;
+        height: 28px;
+        font-size: 13px;
+    }
+}
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start !important;
+        text-align: left;
+        gap: 10px;
+    }
+
+    .cart-item > div.d-flex.align-items-center.gap-3 {
+        width: 100%;
+    }
+
+    .cart-item img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .cart-item .d-flex.align-items-center.gap-2 {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .cart-item input[type="number"] {
+        width: 45px !important;
+    }
+
+    .cart-item p {
+        width: auto !important;
+        text-align: right !important;
+    }
+
+    .summary {
+        font-size: 14px;
+    }
+
+    .btn-checkout {
+        font-size: 15px;
+        padding: 10px;
+    }
+}

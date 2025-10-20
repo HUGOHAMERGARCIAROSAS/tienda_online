@@ -86,6 +86,20 @@ class HomeController extends Controller
         return view('frontend.orders.show')->with(compact('categories','setting'));
     }
 
+    public function checkout(){
+        $categories = DB::table('categories')
+            ->whereNotNull('parent_id')
+            ->where('status', 1)
+            ->orderBy('name', 'ASC')
+            ->get();
+            $setting = DB::table('settings')->first();
+            if (!auth()->check()) {
+                return redirect()->route('login')->with(compact('categories','setting'));
+            }
+
+        return view('frontend.orders.checkout')->with(compact('categories','setting'));
+    }
+
     public function suscriptores(Request $request){
 
         $existingEmail = DB::table('suscriptores')->where('email', $request->email)->first();
@@ -150,7 +164,7 @@ class HomeController extends Controller
             ->orderBy('name', 'ASC')
             ->get();
             $setting = DB::table('settings')->first();
-        
+
         $products = DB::table('products')
             // ->join('product_images', 'products.id', '=', 'product_images.product_id')
             ->where('is_new', 1)

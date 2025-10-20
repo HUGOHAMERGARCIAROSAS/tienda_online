@@ -4,7 +4,7 @@
     <style>
         .thumbnail.product-thumbnail {
             width: 100%;
-            height: 300px; 
+            height: 300px;
             overflow: hidden;
             position: relative;
             border-radius: 8px;
@@ -26,7 +26,7 @@
                     <a href="{{ url('/') }}"> <span>Inicio</span> </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('frontend.categories') }}">
                         <span>Categorías</span>
                     </a>
                 </li>
@@ -151,7 +151,7 @@
                                                             <div id="js-product-list">
                                                                 @if($products->count() > 0)
                                                                 <div class="product-list-container grid-container">
-                                                                    @foreach ($products as $product) 
+                                                                    @foreach ($products as $product)
                                                                         <article
                                                                             class="product-miniature js-product-miniature js-product new women"
                                                                             data-id-product="1" data-id-product-attribute="1">
@@ -169,30 +169,6 @@
                                                                                                 loading="lazy"
                                                                                                 data-image-large-src="{{asset($product->url)}}"
                                                                                                 data-image-medium-src="{{asset($product->url)}}"
-                                                                                                class="db w-100" />
-                                                                                        </picture>
-
-                                                                                        <picture class="cover-image smooth02">
-                                                                                            <source srcset="{{ asset($product->url) }}"
-                                                                                                type="image/webp" />
-                                                                                                <img src="{{ asset($product->url) }}"
-                                                                                                width="380" height="494"
-                                                                                                alt="{{ $product->name}}"
-                                                                                                loading="lazy"
-                                                                                                data-image-large-src="{{asset($product->url)}}"
-                                                                                                data-image-medium-src="{{asset($product->url)}}"
-                                                                                                class="db w-100" />
-                                                                                        </picture>
-
-                                                                                        <picture class="cover-image smooth02">
-                                                                                            <source srcset="{{ asset($product->url) }}"
-                                                                                                type="image/webp" />
-                                                                                            <img src="{{ asset($product->url) }}"
-                                                                                                width="380" height="494"
-                                                                                                alt="{{ $product->name}}"
-                                                                                                loading="lazy"
-                                                                                                data-image-large-src="{{ asset($product->url)}}"
-                                                                                                data-image-medium-src="{{ asset($product->url)}}"
                                                                                                 class="db w-100" />
                                                                                         </picture>
 
@@ -245,9 +221,9 @@
                                                                             </div>
                                                                         </article>
                                                                     @endforeach
-                                                                    
+
                                                                 </div>
-                                                                @else 
+                                                                @else
                                                                     <p>No hay productos en esta categoria</p>
                                                                 @endif
                                                             </div>

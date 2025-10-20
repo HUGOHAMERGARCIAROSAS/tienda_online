@@ -27,7 +27,8 @@ Route::middleware('guest:web')->group(function () {
     Route::get('/featured_products', [HomeController::class, 'featured_products'])->name('featured_products');
     Route::get('/new_products', [HomeController::class, 'new_products'])->name('new_products');
 
-    Route::get('/cart', [HomeController::class, 'cart'])->name('frontend.cart');
+    // Route::get('/cart', [HomeController::class, 'cart'])->name('frontend.cart');
+    // Route::get('/checkout', [HomeController::class, 'checkout'])->name('frontend.checkout');
 
     Route::post('/suscriptores', [HomeController::class, 'suscriptores'])->name('frontend.suscriptores');
 });
@@ -36,6 +37,7 @@ Route::middleware('guest:web')->group(function () {
 
 Route::middleware('auth:web')->group(function () {
     Route::get('/client/dashboard', [ClientLoginController::class, 'dashboard'])->name('client.dashboard');
+    Route::get('/cart', [HomeController::class, 'cart'])->name('frontend.cart');
     Route::post('/logout', [ClientLoginController::class, 'logout'])->name('logout');
 });
 
