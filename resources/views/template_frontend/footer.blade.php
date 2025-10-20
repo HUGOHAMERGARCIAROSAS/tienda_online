@@ -66,16 +66,16 @@
                                                     <div class="pk-ce-widget view_grid pk-grid">
                                                         <ul class="widget-pklinks w-100">
                                                             <li>
-                                                                <a href="#">Nosotros</a>
+                                                                <a href="{{ url('nosotros')}}">Nosotros</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Categorías</a>
+                                                                <a href="{{ url('categories')}}">Categorías</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Productos Destacados</a>
+                                                                <a href="{{url('featured_products')}}">Productos Destacados</a>
                                                             </li>
                                                             <li>
-                                                                <a href="#">Productos Nuevos</a>
+                                                                <a href="{{url('new_products')}}">Productos Nuevos</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -107,21 +107,21 @@
                                                                     src="{{asset('template_admin/images/phone-white_lOXpAwZdE.svg')}}"
                                                                     alt="telephone_1" width="17" height="17"
                                                                     loading="lazy" /></div>
-                                                            <div class="tb-sect-text">987654321</div>
+                                                            <div class="tb-sect-text">{{$setting->celular}}</div>
                                                         </div>
                                                         <div class="tb-sect">
                                                             <div class="tb-sect-icon"><img
                                                                     src="{{asset('template_admin/images/mail_white_kT87jOSLP.svg')}}"
                                                                     alt="envelope.png" width="17" height="17"
                                                                     loading="lazy" /></div>
-                                                            <div class="tb-sect-text">mjglam@gmail.com</div>
+                                                            <div class="tb-sect-text">{{$setting->email}}</div>
                                                         </div>
                                                         <div class="tb-sect">
                                                             <div class="tb-sect-icon"><img
                                                                     src="{{asset('template_admin/images/whatsapp_white_btvMM83jI.svg')}}"
                                                                     alt="whatsapp.png" width="17" height="17"
                                                                     loading="lazy" /></div>
-                                                            <div class="tb-sect-text">987654321</div>
+                                                            <div class="tb-sect-text">{{$setting->whatsapp}}</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -165,32 +165,32 @@
                                             <div class="elementor-widget-container">
                                                 <div class="elementor-social-icons-wrapper">
                                                     <a class="elementor-icon elementor-social-icon elementor-social-icon-facebook"
-                                                        href="#" target="_blank">
+                                                        href="{{$setting->facebook}}" target="_blank">
                                                         <span class="elementor-screen-only">Facebook</span>
                                                         <i class="fa fa-facebook"></i>
                                                     </a>
                                                     <a class="elementor-icon elementor-social-icon elementor-social-icon-twitter"
-                                                        href="#" target="_blank">
+                                                        href="{{$setting->twitter}}" target="_blank">
                                                         <span class="elementor-screen-only">Twitter</span>
                                                         <i class="fa fa-twitter"></i>
                                                     </a>
                                                     <a class="elementor-icon elementor-social-icon elementor-social-icon-instagram"
-                                                        href="#" target="_blank">
+                                                        href="{{$setting->instagram}}" target="_blank">
                                                         <span class="elementor-screen-only">Instagram</span>
                                                         <i class="fa fa-instagram"></i>
                                                     </a>
                                                     <a class="elementor-icon elementor-social-icon elementor-social-icon-pinterest"
-                                                        href="#" target="_blank">
+                                                        href="{{$setting->pinterest}}" target="_blank">
                                                         <span class="elementor-screen-only">Pinterest</span>
                                                         <i class="fa fa-pinterest"></i>
                                                     </a>
                                                     <a class="elementor-icon elementor-social-icon elementor-social-icon-youtube"
-                                                        href="#" target="_blank">
+                                                        href="{{$setting->youtube}}" target="_blank">
                                                         <span class="elementor-screen-only">Youtube</span>
                                                         <i class="fa fa-youtube"></i>
                                                     </a>
                                                     <a class="elementor-icon elementor-social-icon elementor-social-icon-vimeo"
-                                                        href="#" target="_blank">
+                                                        href="{{$setting->vimeo}}" target="_blank">
                                                         <span class="elementor-screen-only">Vimeo</span>
                                                         <i class="fa fa-vimeo"></i>
                                                     </a>

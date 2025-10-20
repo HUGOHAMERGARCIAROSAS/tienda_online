@@ -15,7 +15,7 @@ class CategoryController extends Controller
         $subcategories = DB::table('categories as categories')
             ->join ('categories as subcategories', 'categories.id', '=', 'subcategories.parent_id')
             ->select('categories.*','subcategories.id as subcategories_id','subcategories.status as subcategories_status', 
-            'subcategories.name as subcategories_name', 'subcategories.id as subcategories_id', 'subcategories.slug as subcategories_slug')
+            'subcategories.name as subcategories_name', 'subcategories.id as subcategories_id', 'subcategories.slug as subcategories_slug','subcategories.url as subcategories_url')
             ->whereNotNull('subcategories.parent_id')
             ->orderBy('subcategories.name', 'ASC')
             ->get();
@@ -33,12 +33,20 @@ class CategoryController extends Controller
             return redirect()->back()->with('error', 'El slug ya existe. Por favor, elige otro.');
         }   
 
-        DB::table('categories')->insert([
+        $data = [
             'name' => $request->name,
             'slug' => $request->slug,
-            'parent_id' => $parent_id,
             'status' => 1,
-        ]);
+            'parent_id' => $parent_id
+        ];
+
+        if($request->hasFile('image')) {
+            $image = time(). '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('template_admin/images/categories'), $image);
+            $data['url'] = 'template_admin/images/categories/'.$image;
+        }
+
+        DB::table('categories')->insert($data);
 
         return redirect()->route('admin.categories.index')->with('success', 'Categoría creada exitosamente.');
     }
@@ -57,10 +65,18 @@ class CategoryController extends Controller
             return redirect()->back()->with('error', 'El slug ya existe. Por favor, elige otro.');
         }   
 
-        DB::table('categories')->where('id', $id)->update([
+        $data = [
             'name' => $request->name,
             'slug' => $request->slug,
-        ]);
+        ];
+
+        if($request->hasFile('image')) {
+            $image = time(). '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('template_admin/images/categories'), $image);
+            $data['url'] = 'template_admin/images/categories/'.$image;
+        }
+
+        DB::table('categories')->where('id', $id)->update($data);
 
         return redirect()->route('admin.categories.index')->with('success', 'Categoría actualizada exitosamente.');
     }

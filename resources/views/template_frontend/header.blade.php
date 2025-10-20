@@ -344,7 +344,7 @@
                                                                     <li class="pk-nav-li pk-align-left"
                                                                         role="none">
                                                                         <div class="flex-container align-items-center">
-                                                                            <a href="#"
+                                                                            <a href="{{ route('frontend.categories') }}"
                                                                                 class="pk-nav-link flex-grow1"
                                                                                 role="menuitem" title="">
                                                                                 CATEGORIAS
@@ -368,6 +368,24 @@
                                                                                         </a>
                                                                                     </div>
                                                                                 @endforeach
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="pk-nav-li pk-align-auto"
+                                                                        role="none">
+                                                                        <div class="flex-container align-items-center">
+                                                                            <a href="{{ url('featured_products') }}"
+                                                                                class="pk-nav-link flex-grow1"
+                                                                                role="menuitem" title="">
+                                                                                 DESTACADOS
+                                                                            </a>
+                                                                            <div class="pk-dropdown-toggler"
+                                                                                role="button">
+                                                                                <svg class="svgic pk-smooth">
+                                                                                    <use
+                                                                                        href="{{ asset('template/images/lib.svg#arrowdown') }}">
+                                                                                    </use>
+                                                                                </svg>
                                                                             </div>
                                                                         </div>
                                                                     </li>

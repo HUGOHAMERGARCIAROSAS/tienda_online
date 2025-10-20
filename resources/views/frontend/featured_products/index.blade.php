@@ -26,12 +26,7 @@
                     <a href="{{ url('/') }}"> <span>Inicio</span> </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span>Categorías</span>
-                    </a>
-                </li>
-                <li>
-                    <span>{{ $category->name }}</span>
+                    <span>Productos Destacados</span>
                 </li>
             </ol>
         </nav>

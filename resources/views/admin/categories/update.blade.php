@@ -6,7 +6,7 @@
                     <h1 class="modal-title fs-16" id="editTransfer{{ $category->subcategories_id }}Label">Actualizar Categoría</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('admin.categories.update', $category->subcategories_id) }}" method="POST">
+                <form action="{{ route('admin.categories.update', $category->subcategories_id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="row gy-15">
@@ -19,6 +19,11 @@
                                 <input type="hidden" name="parent_id" value="1">
                                 <input class="form-control input-slug" type="text" name="slug" id="slug" placeholder="Agregar un slug" value="{{ $category->subcategories_slug }}"
                                     readonly required>
+                            </div>
+                            <div class="col-xl-12">
+                                <label class="form-label">Imagen </label>
+                                <img src="{{ asset($category->subcategories_url) }}" alt="" width="100px" height="100px">
+                                <input class="form-control" type="file" name="image" id="image" required>
                             </div>
                         </div>
                     </div>

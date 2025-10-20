@@ -4,10 +4,12 @@ use App\Http\Controllers\Admin\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\AdminLoginController;
-use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Auth\ClientLoginController;
+use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\SettingController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -19,6 +21,11 @@ Route::middleware('guest:web')->group(function () {
     Route::post('/register',[ClientLoginController::class, 'register'])->name('register');
     Route::get('/categories/{slug}', [HomeController::class, 'showCategories'])->name('frontend.categories.show');
     Route::get('/products/{slug}', [HomeController::class, 'showProducts'])->name('frontend.product.show');
+
+    Route::get('/nosotros', [HomeController::class, 'nosotros'])->name('frontend.nosotros');
+    Route::get('/categories', [HomeController::class, 'categories'])->name('frontend.categories');
+    Route::get('/featured_products', [HomeController::class, 'featured_products'])->name('featured_products');
+    Route::get('/new_products', [HomeController::class, 'new_products'])->name('new_products');
 
     Route::get('/cart', [HomeController::class, 'cart'])->name('frontend.cart');
 
@@ -66,12 +73,19 @@ Route::prefix('admin')->group(function () {
         Route::post('admin/products/status/{id}', [ProductController::class, 'updateStatus'])->name('admin.products.status');
         Route::post('admin/products/deleteImage', [ProductController::class, 'deleteImage'])->name('admin.products.deleteImage');
 
-
-
         Route::get('/frontend/sliders', [FrontendController::class, 'sliders'])->name('admin.frontend.sliders');
         Route::post('frontend/sliders', [FrontendController::class, 'storeSliders'])->name('admin.frontend.sliders.store');
         Route::post('frontend/sliders/{id}', [FrontendController::class, 'updateSlider'])->name('admin.frontend.sliders.update');
         Route::delete('frontend/sliders/delete/{id}', [FrontendController::class, 'deleteSlider'])->name('admin.frontend.sliders.delete');
+
+        Route::get('/admin/brands', [BrandController::class, 'index'])->name('admin.brands.index');
+        Route::post('admin/brands', [BrandController::class, 'store'])->name('admin.brands.store');
+        Route::post('admin/brands/{id}', [BrandController::class, 'update'])->name('admin.brands.update');
+        Route::delete('admin/brands/delete/{id}', [BrandController::class, 'delete'])->name('admin.brands.delete');
+        Route::post('admin/brands/status/{id}', [BrandController::class, 'updateStatus'])->name('admin.brands.status');
+
+        Route::get('/admin/settings', [SettingController::class, 'index'])->name('admin.settings.index');
+        Route::put('admin/settings/{id}', [SettingController::class, 'update'])->name('admin.settings.update');
 
         Route::post('/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
     });

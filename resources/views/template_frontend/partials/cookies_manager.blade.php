@@ -1,8 +1,6 @@
 <div class="pk-fixed-bottom pk-fixed-bottom-right flex-container fixed cp justify-content-left">
     <button class="pk-fixed-button pk-cookie-toggler" aria-label="Cookies Manager">
-        <svg class="svgic">
-            <use href="{{ asset('template/images/lib.svg#cookie') }}"></use>
-        </svg>
+        <img src="{{asset('mj_glam_width.png')}}" alt="Cookies Manager">
     </button> 
     <button class="pk-fixed-button pk-scroll-totop fixed" tabindex="0" aria-label="Scroll to Top">
         <svg class="svgic">

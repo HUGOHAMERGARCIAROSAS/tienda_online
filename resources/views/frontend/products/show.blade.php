@@ -13,10 +13,11 @@
         }
         .modal-backdrop {
             z-index: 1050 !important;
-            }
-            .modal {
+        }
+        .modal {
             z-index: 1100 !important;
-            }
+        }
+        
     </style>
 @endsection
 @section('content')

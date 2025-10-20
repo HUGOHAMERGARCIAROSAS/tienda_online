@@ -21,7 +21,9 @@ class HomeController extends Controller
             ->where('status', 1)
             ->limit(20)
             ->get();
-        return view('welcome')->with(compact('sliders','categories','productos_destacados'));
+        $brands = DB::table('brands')->where('status',1)->get();
+        $setting = DB::table('settings')->first();
+        return view('welcome')->with(compact('sliders','categories','productos_destacados','brands','setting'));
     }
 
     public function showCategories($slug)
@@ -45,7 +47,9 @@ class HomeController extends Controller
             ->where('status', 1)
             ->get();
 
-        return view('frontend.categories.show')->with(compact('category', 'categories', 'slug', 'products'));
+        $setting = DB::table('settings')->first();
+
+        return view('frontend.categories.show')->with(compact('category', 'categories', 'slug', 'products','setting'));
     }
 
     public function showProducts($slug)
@@ -66,8 +70,9 @@ class HomeController extends Controller
             ->get();
 
         $category = DB::table('categories')->where('id', $product->category_id)->first();
+        $setting = DB::table('settings')->first();
 
-        return view('frontend.products.show')->with(compact('product', 'categories', 'slug', 'category', 'product_images'));
+        return view('frontend.products.show')->with(compact('product', 'categories', 'slug', 'category', 'product_images','setting'));
     }
 
     public function cart()
@@ -77,7 +82,8 @@ class HomeController extends Controller
             ->where('status', 1)
             ->orderBy('name', 'ASC')
             ->get();
-        return view('frontend.orders.show')->with(compact('categories'));
+            $setting = DB::table('settings')->first();
+        return view('frontend.orders.show')->with(compact('categories','setting'));
     }
 
     public function suscriptores(Request $request){
@@ -99,6 +105,58 @@ class HomeController extends Controller
             'status' => 'success',
             'message' => 'Gracias por suscribirte'
         ]);
+    }
+
+    public function nosotros(){
+        $categories = DB::table('categories')
+            ->whereNotNull('parent_id')
+            ->where('status', 1)
+            ->orderBy('name', 'ASC')
+            ->get();
+
+        $setting = DB::table('settings')->first();
+        return view('frontend.nosotros.index')->with(compact('categories','setting'));
+    }
+
+    public function categories(){
+        $categories = DB::table('categories')
+            ->whereNotNull('parent_id')
+            ->where('status',1)
+            ->orderBy('name', 'ASC')
+            ->get();
+            $setting = DB::table('settings')->first();
+        return view('frontend.category.index')->with(compact('categories','setting'));
+    }
+
+    public function featured_products(){
+        $categories = DB::table('categories')
+            ->whereNotNull('parent_id')
+            ->where('status',1)
+            ->orderBy('name', 'ASC')
+            ->get();
+            $setting = DB::table('settings')->first();
+        $products = DB::table('products')
+            // ->join('product_images', 'products.id', '=', 'product_images.product_id')
+            ->where('is_featured', 1)
+            ->where('status', 1)
+            ->get();
+        return view('frontend.featured_products.index')->with(compact('categories','setting','products'));
+    }
+
+    public function new_products(){
+        $categories = DB::table('categories')
+            ->whereNotNull('parent_id')
+            ->where('status',1)
+            ->orderBy('name', 'ASC')
+            ->get();
+            $setting = DB::table('settings')->first();
+        
+        $products = DB::table('products')
+            // ->join('product_images', 'products.id', '=', 'product_images.product_id')
+            ->where('is_new', 1)
+            ->where('status', 1)
+            ->get();
+        return view('frontend.new_products.index')->with(compact('categories','setting','products'));
     }
 
 }
