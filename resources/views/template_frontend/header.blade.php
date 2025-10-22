@@ -9,7 +9,7 @@
     .category-item a {
         display: block;
         padding: 10px 12px;
-        color: #333; 
+        color: #333;
         text-decoration: none;
         border-radius: 6px;
         background-color: #fff;
@@ -19,7 +19,7 @@
     .category-item a:hover {
         background-color: #323232;
         color: #fff;
-        transform: translateY(-3px); 
+        transform: translateY(-3px);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
@@ -213,55 +213,6 @@
                                     data-id="14fa0fe" data-element_type="column">
                                     <div class="elementor-column-wrap elementor-element-populated">
                                         <div class="elementor-widget-wrap">
-                                            <div class="elementor-element elementor-element-3627c4e elementor-widget__width-auto elementor-widget elementor-widget-pkwatchlist"
-                                                data-id="3627c4e" data-element_type="widget"
-                                                data-widget_type="pkwatchlist.default">
-                                                <div class="elementor-widget-container">
-                                                    <div class="pk-ce-widget-wrapper">
-                                                        <div class="pk-ce-widget view_grid">
-                                                            <div
-                                                                class="watchlist-select user-select relative dib show-brackets">
-                                                                <div class="pk-watchlist">
-                                                                    <div class="current-item cp smooth02 flex-container icon-element pk-item-content align-items-center justify-content-center"
-                                                                        data-pktabname="el-products"
-                                                                        data-pktabgroup="el-products"
-                                                                        data-pktabsection="el-watchlist"
-                                                                        data-pktype="sidebar">
-                                                                        <span>Mi lista de deseos</span>
-                                                                        <span class="header-item-counter "
-                                                                            data-productsnum="0">0</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="elementor-element elementor-element-7f4da094 elementor-widget__width-auto elementor-widget elementor-widget-pkfavorites"
-                                                data-id="7f4da094" data-element_type="widget"
-                                                data-widget_type="pkfavorites.default">
-                                                <div class="elementor-widget-container">
-                                                    <div class="pk-ce-widget-wrapper">
-                                                        <div class="pk-ce-widget view_grid">
-                                                            <div
-                                                                class="favorites-select user-select relative dib show-brackets">
-                                                                <div class="pk-favorites">
-                                                                    <div class="current-item cp smooth02 flex-container icon-element pk-item-content align-items-center justify-content-center"
-                                                                        data-pktabname="el-products"
-                                                                        data-pktabgroup="el-products"
-                                                                        data-pktabsection="el-favorites"
-                                                                        data-pktype="sidebar">
-                                                                        <span>Mis favoritos</span>
-                                                                        <span
-                                                                            class="header-item-counter js-pkfavorites-counter"
-                                                                            data-productsnum="0">0</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <div class="elementor-element elementor-element-6d04611 elementor-widget__width-auto elementor-widget elementor-widget-pksignin"
                                                 data-id="6d04611" data-element_type="widget"
                                                 data-widget_type="pksignin.default">
@@ -371,24 +322,6 @@
                                                                             </div>
                                                                         </div>
                                                                     </li>
-                                                                    <li class="pk-nav-li pk-align-auto"
-                                                                        role="none">
-                                                                        <div class="flex-container align-items-center">
-                                                                            <a href="{{ url('featured_products') }}"
-                                                                                class="pk-nav-link flex-grow1"
-                                                                                role="menuitem" title="">
-                                                                                 DESTACADOS
-                                                                            </a>
-                                                                            <div class="pk-dropdown-toggler"
-                                                                                role="button">
-                                                                                <svg class="svgic pk-smooth">
-                                                                                    <use
-                                                                                        href="{{ asset('template/images/lib.svg#arrowdown') }}">
-                                                                                    </use>
-                                                                                </svg>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
                                                                 </ul>
                                                             </nav>
                                                         </div>
@@ -448,59 +381,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="elementor-element elementor-element-25cbb9af elementor-widget__width-auto elementor%s-align-flex-start elementor%s-align-flex-start elementor-widget elementor-widget-pksearch"
-                                                data-id="25cbb9af" data-element_type="widget"
-                                                data-widget_type="pksearch.default">
-                                                <div class="elementor-widget-container">
-                                                    <div class="pk-ce-widget-wrapper">
-                                                        <div class="pk-ce-widget view_grid">
-                                                            <div class="pk-search-widget flex-container categories-outside"
-                                                                data-show_input=0 data-button_action=open_sidebar
-                                                                data-voice_search=false data-voice_search_tips=yes
-                                                                data-items_limit=5 data-order_by=position
-                                                                data-order_way=desc data-minlength=3 data-page="1">
-                                                                <form method="get"
-                                                                    action="https://alysum.promokit.eu/en/module/pkelements/search"
-                                                                    data-original-action="https://alysum.promokit.eu/en/search"
-                                                                    class="relative">
-                                                                    <fieldset
-                                                                        class="flex-container align-items-center">
-                                                                        <legend>BUSCAR</legend>
-                                                                        <input type="search" name="s"
-                                                                            value="" class="search-popup hidden"
-                                                                            placeholder="Buscar..."
-                                                                            aria-label="Search">
-                                                                        <button type="submit"
-                                                                            class="flex-container justify-content-center align-items-center"
-                                                                            aria-label="BUSCAR"
-                                                                            data-pktabname="el-search"
-                                                                            data-pktabgroup="el-search"
-                                                                            data-pktype="sidebar">
-                                                                            <svg class="svgic svg-loader in_progress">
-                                                                                <use
-                                                                                    href="{{ asset('template/images/lib.svg#loading') }}">
-                                                                                </use>
-                                                                            </svg> <svg
-                                                                                class="svgic svg-search hidden">
-                                                                                <use
-                                                                                    href="{{ asset('template/images/lib.svg#search') }}">
-                                                                                </use>
-                                                                            </svg> <span>BUSCAR</span>
-                                                                        </button>
-                                                                    </fieldset>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

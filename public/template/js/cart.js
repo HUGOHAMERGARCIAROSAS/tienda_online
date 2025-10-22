@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const cartContainer = document.getElementById("cart-items");
         const emptyCart = document.getElementById("empty-cart");
         const totalEl = document.getElementById("total");
-        const shipping = 5;
+        const shipping = 0;
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
         function renderCart() {
@@ -93,10 +93,78 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        document.getElementById("btnFinalizar").addEventListener("click", () => {
-            if (cart.length === 0) return swal.fire("El carrito está vacío");
-            window.location.href = "/checkout";
+
+        document.getElementById("btnFinalizar").addEventListener("click", async () => {
+            if (cart.length === 0) {
+                return Swal.fire({
+                    icon: "warning",
+                    title: "Carrito vacío",
+                    text: "Agrega al menos un producto antes de finalizar.",
+                });
+            }
+
+            let total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            let data = {
+                cart: cart,
+                total: total
+            };
+
+            try {
+                const response = await fetch(CART_STORE_URL, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-CSRF-TOKEN": CSRF_TOKEN
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (!response.ok || result.status === "error") {
+                    return Swal.fire({
+                        icon: "error",
+                        title: "Error al procesar el pedido",
+                        text: result.message || "Ocurrió un problema con la orden.",
+                    });
+                }
+
+                Swal.fire({
+                    icon: "success",
+                    title: "¡Pedido realizado!",
+                    text: "Tu pedido fue registrado exitosamente.",
+                    showCancelButton: true,
+                    confirmButtonText: "Enviar por WhatsApp",
+                    cancelButtonText: "Cerrar"
+                }).then((resultSwal) => {
+                    if (resultSwal.isConfirmed) {
+                        const productos = cart.map(item => `- ${item.name} x${item.quantity}`).join("\n");
+                        const mensajeTexto =
+                        `¡Nuevo pedido realizado!\n\n` +
+                        `Pedido #${result.order_id}\n` +
+                        `Total: S/. ${data.total.toFixed(2)}\n\n` +
+                        `Productos:\n${productos}\n\n` +
+                        `Fecha: ${new Date().toLocaleString()}`;
+
+                        const mensaje = encodeURIComponent(mensajeTexto);
+                        const telefono = C_TELEFONO;
+                        const whatsappUrl = `https://wa.me/${telefono}?text=${mensaje}`;
+                        window.open(whatsappUrl, "_blank");
+                    }
+                    localStorage.removeItem("cart");
+                    window.location.href = `/pedido/exito/${result.order_id}`;
+                });
+
+            } catch (error) {
+                console.error("Error:", error);
+                Swal.fire({
+                    icon: "error",
+                    title: "Error de conexión",
+                    text: "No se pudo enviar el pedido. Intenta nuevamente.",
+                });
+            }
         });
+
 
         renderCart();
     });

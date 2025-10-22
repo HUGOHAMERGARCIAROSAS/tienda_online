@@ -26,18 +26,33 @@ Route::middleware('guest:web')->group(function () {
     Route::get('/categories', [HomeController::class, 'categories'])->name('frontend.categories');
     Route::get('/featured_products', [HomeController::class, 'featured_products'])->name('featured_products');
     Route::get('/new_products', [HomeController::class, 'new_products'])->name('new_products');
-
-    // Route::get('/cart', [HomeController::class, 'cart'])->name('frontend.cart');
-    // Route::get('/checkout', [HomeController::class, 'checkout'])->name('frontend.checkout');
-
     Route::post('/suscriptores', [HomeController::class, 'suscriptores'])->name('frontend.suscriptores');
 });
 
 
 
 Route::middleware('auth:web')->group(function () {
+
+    Route::get('/categories/{slug}', [HomeController::class, 'showCategories'])->name('frontend.categories.show');
+    Route::get('/products/{slug}', [HomeController::class, 'showProducts'])->name('frontend.product.show');
+
     Route::get('/client/dashboard', [ClientLoginController::class, 'dashboard'])->name('client.dashboard');
     Route::get('/cart', [HomeController::class, 'cart'])->name('frontend.cart');
+    Route::post('cart_store', [HomeController::class, 'cartStore'])->name('frontend.cart.store');
+    Route::get('/pedido/exito/{order_id}', [HomeController::class, 'pedido_exitoso'])->name('frontend.pedido_exitoso');
+
+    Route::get('/mi_cuenta', [ClientLoginController::class, 'dashboard'])->name('frontend.mi_cuenta');
+    Route::post('/mi_cuenta/{id}', [ClientLoginController::class, 'update'])->name('client.update');
+    Route::get('/mis_favoritos', [ClientLoginController::class, 'mis_favoritos'])->name('frontend.mis_favoritos');
+    Route::get('/lista_de_deseos', [ClientLoginController::class, 'lista_de_deseos'])->name('frontend.lista_de_deseos');
+    Route::get('/mis_pedidos', [ClientLoginController::class, 'mis_pedidos'])->name('frontend.mis_pedidos');
+
+    Route::get('/nosotros', [HomeController::class, 'nosotros'])->name('frontend.nosotros');
+    Route::get('/categories', [HomeController::class, 'categories'])->name('frontend.categories');
+    Route::get('/featured_products', [HomeController::class, 'featured_products'])->name('featured_products');
+    Route::get('/new_products', [HomeController::class, 'new_products'])->name('new_products');
+    Route::post('/suscriptores', [HomeController::class, 'suscriptores'])->name('frontend.suscriptores');
+
     Route::post('/logout', [ClientLoginController::class, 'logout'])->name('logout');
 });
 

@@ -21,14 +21,14 @@
         </li>
 
 
-        <li class="el-search">
+        {{-- <li class="el-search">
             <button class="flex-container flex-column align-items-center relative" data-pktabname="el-search"
                 data-pktabgroup="el-search" data-pktype="sidebar" aria-label="Search">
                 <svg class="svgic">
                     <use href="{{ asset('template/images/lib.svg#search') }}"></use>
                 </svg> <span>Buscar</span>
             </button>
-        </li>
+        </li> --}}
 
 
         <li class="el-pknav">

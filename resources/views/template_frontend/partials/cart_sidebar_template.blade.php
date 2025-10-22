@@ -28,7 +28,7 @@
                             <div class="cart-items"></div>
                             <div class="cart-footer">
                                 <p class="cart-total">Total: <span id="cart-total">S/ 0.00</span></p>
-                                <a href="{{ route('frontend.cart') }}" class="btn btn-primary w-100 mt-2">Ir a pagar</a>
+                                <a href="{{ route('frontend.cart') }}" class="btn btn-primary w-100 mt-2 p-3">Ver carrito</a>
                             </div>
                         </div>
                     </div>

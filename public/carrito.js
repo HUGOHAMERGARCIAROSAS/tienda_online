@@ -20,6 +20,7 @@ function addToCart(productId) {
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     loadCart();
+    renderCart();
 }
 
 function loadCart() {
@@ -28,7 +29,7 @@ function loadCart() {
     const emptyMsg = document.querySelector('.empty_shopping_cart');
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    if (!cartContainer || !totalContainer) return; 
+    if (!cartContainer || !totalContainer) return;
 
     cartContainer.innerHTML = '';
 
@@ -50,7 +51,7 @@ function loadCart() {
                     <div class="image-wrapper" style="width:55px;height:55px;overflow:hidden;border-radius:8px;border:1px solid #eee;">
                         <img src="${item.image}" alt="${item.name}" style="width:100%;height:100%;object-fit:cover;">
                     </div>
-                    <div class="flex-grow1" style="padding-left:10px;"> 
+                    <div class="flex-grow1" style="padding-left:10px;">
                         <p class="m-0 fw-semibold mr-2" style="font-size:14px;color:#333;">${item.name}</p>
                         <p class="m-0" style="font-size:13px;color:#888;">S/ ${(item.price * item.quantity).toFixed(2)} (S/ ${item.price.toFixed(2)} x ${item.quantity})</p>
                     </div>
@@ -82,6 +83,7 @@ function removeFromCart(index) {
     cart.splice(index, 1);
     localStorage.setItem('cart', JSON.stringify(cart));
     loadCart();
+    renderCart();
 }
 
 function updateCartCount() {
@@ -105,7 +107,8 @@ document.addEventListener("DOMContentLoaded", function() {
             document.body.appendChild(clone);
         }
     }
-    loadCart(); 
+    loadCart();
+    renderCart();
 });
 
 function addToCart2(productId) {
@@ -114,9 +117,9 @@ function addToCart2(productId) {
 
     const name = document.querySelector('.product-info-section h1').innerText.trim();
     const price = parseFloat(document.querySelector('.normal-price').getAttribute('content'));
-    const image = document.querySelector('.product-cover img') 
+    const image = document.querySelector('.product-cover img')
         ? document.querySelector('.product-cover img').getAttribute('src')
-        : '/images/default.jpg'; 
+        : '/images/default.jpg';
     const quantity = parseInt(document.getElementById('quantity_wanted').value) || 1;
 
     if (existingProduct) {
@@ -134,7 +137,8 @@ function addToCart2(productId) {
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
-    loadCart(); 
+    loadCart();
+    renderCart();
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -154,3 +158,5 @@ document.addEventListener("DOMContentLoaded", function () {
         if (current > 1) qtyInput.value = current - 1;
     });
 });
+
+

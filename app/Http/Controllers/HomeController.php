@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use App\Models\Order;
+use App\Models\OrderItem;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -84,6 +86,121 @@ class HomeController extends Controller
             ->get();
             $setting = DB::table('settings')->first();
         return view('frontend.orders.show')->with(compact('categories','setting'));
+    }
+
+    public function cartStore(Request $request)
+    {
+        try {
+            DB::beginTransaction();
+
+            if (!auth()->check()) {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Usuario no autenticado',
+                ], 401);
+            }
+
+
+            $orderId = DB::table('orders')->insertGetId([
+                'user_id' => auth()->id(),
+                'status' => 'pending',
+                'total' => $request->total,
+                'grand_total' => $request->total,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+            $data = $request->all();
+
+            if (empty($data['cart']) || !is_array($data['cart'])) {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Carrito vacío o formato inválido',
+                ], 400);
+            }
+
+            $insertedCount = 0;
+            $skipped = [];
+
+            foreach ($data['cart'] as $item) {
+                $product = DB::table('products')
+                    ->where('id', $item['id'])
+                    ->where('status', 1)
+                    ->first();
+
+                if (!$product) {
+                    $skipped[] = $item['id'];
+                    continue;
+                }
+
+                DB::table('order_items')->insert([
+                    'order_id' => $orderId,
+                    'product_id' => $item['id'],
+                    'quantity' => $item['quantity'],
+                    'price' => $item['price'],
+                    'discount' => 0,
+                    'subtotal' => $item['price'] * $item['quantity'],
+                ]);
+
+                $insertedCount++;
+            }
+
+            DB::commit();
+
+            if ($insertedCount === 0) {
+                DB::table('orders')->where('id', $orderId)->delete();
+
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Ningún producto activo. No se creó la orden.',
+                    'skipped_products' => $skipped,
+                ], 400);
+            }
+
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Pedido realizado exitosamente',
+                'order_id' => $orderId,
+                'skipped_products' => $skipped,
+            ]);
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Error al procesar el pedido: ' . $e->getMessage(),
+            ], 500);
+        }
+    }
+
+    public function pedido_exitoso($id){
+        $categories = DB::table('categories')
+            ->whereNotNull('parent_id')
+            ->where('status', 1)
+            ->orderBy('name', 'ASC')
+            ->get();
+
+        $setting = DB::table('settings')->first();
+
+
+        $order = DB::table('orders')
+            ->where('orders.id', $id)
+            ->join('users', 'users.id', '=', 'orders.user_id')
+            ->select('orders.*', 'users.name as user_name')
+            ->first();
+
+        $items = DB::table('order_items')
+            ->join('products', 'products.id', '=', 'order_items.product_id')
+            ->where('order_items.order_id', $id)
+            ->select('products.name', 'order_items.quantity', 'order_items.price', 'order_items.subtotal')
+            ->get();
+
+        if (!$order) {
+            abort(404, 'Pedido no encontrado');
+        }
+
+        return view('frontend.orders.pedido_exitoso')->with(compact('categories','setting','id','order','items'));
     }
 
     public function checkout(){

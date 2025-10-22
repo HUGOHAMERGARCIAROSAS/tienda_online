@@ -13,22 +13,19 @@
                 </ul>
             </div>
             <div class="tab-content">
+                @if(Auth::check())
                 <ul class="opt-list sidebar-ul">
                     <li class="smooth02 relative">
-                        <a href="#" title="Mi cuenta">Mi cuenta</a>
+                        <a href="{{ route('frontend.mi_cuenta') }}" title="Mi cuenta">Mi cuenta</a>
                     </li>
                     <li class="smooth02 relative">
-                        <a href="#" title="Identity">Mis Favoritos</a>
-                    </li>
-                    <li class="smooth02 relative">
-                        <a href="#" title="Add first address">Mi lista de deseos</a>
-                    </li>
-                    <li class="smooth02 relative">
-                        <a href="#" title="Credit slips">Mis Pedidos</a>
+                        <a href="{{ route('frontend.mis_pedidos') }}" title="Credit slips">Mis Pedidos</a>
                     </li>
                 </ul>
                 <br>
-                <a class="btn btn-primary" href="#">Mi Cuenta</a>
+                @else
+                <a class="btn btn-primary" href="{{ route('login') }}">Iniciar Sesión</a>
+                @endif
             </div>
         </div>
     </aside>

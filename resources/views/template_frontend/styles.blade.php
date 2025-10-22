@@ -5,6 +5,8 @@
 <meta name="author" content="support[at]hgarciardev.com">
 <meta name="copyright" content="hgarciardev.com">
 <meta name="application-name" content="MJGlam">
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
 @yield('content_style')
 <link rel="preload" href="{{ asset('template/css/ceicons.woff2?t6ebnx') }}" as="font" type="font/woff2"
     crossorigin>

@@ -57,7 +57,7 @@
             "remove": "https:\/\/alysum.promokit.eu\/en\/module\/pkfavorites\/actions?process=remove",
             "phrases": {
                 "title": "favorites",
-                "add": "Add to favorites",
+                "add": "Agregar a favoritos",
                 "remove": "Remove from favorites",
                 "added": "The product has been added to your <a href=\"https:\/\/alysum.promokit.eu\/en\/favorites\">favorites<\/a>",
                 "removed": "The product has been removed from <a href=\"https:\/\/alysum.promokit.eu\/en\/favorites\">favorites<\/a>"
