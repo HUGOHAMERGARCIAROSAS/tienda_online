@@ -1,7 +1,6 @@
 <style>
     .brand.product-brand {
         width: 100%;
-        height: 100px; 
         overflow: hidden;
         position: relative;
         border-radius: 8px;

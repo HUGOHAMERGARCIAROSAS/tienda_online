@@ -73,6 +73,11 @@
         <div class="tab-pane" data-pktabcontent="register" data-pktabgroup="el-signin-inner" role="tabpanel">
             <div class="pk-aside-body products grid-container js-tab-register prodnum">
                 <div class="customer-form-container">
+                    @if (session('error'))
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                     <form class="customer-form" method="post" data-pktabcontent="register"
                         data-pktabgroup="pkhiloginfom"
                         action="{{ route('register') }}">

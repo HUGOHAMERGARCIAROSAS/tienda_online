@@ -102,11 +102,18 @@ class ClientLoginController extends Controller
 
     public function register(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
+        // validar mail que no exista
+
+        $email = $request->email;
+        $email_count = DB::table('users')->where('email', $email)->count();
+        if ($email_count > 0) {
+            return redirect()->back()->with('error', 'El email ya existe');
+        }
+
+        if($request->password != $request->password_confirmation) {
+            return redirect()->back()->with('error', 'Las contraseñas no coinciden');
+        }
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,

@@ -29,6 +29,11 @@
                                     Si ya tiene una cuenta con nosotros,
                                     <a href="{{ route('login') }}"> inicie sesión</a>
                                 </p>
+                                @if (session('error'))
+                                    <div class="alert alert-danger alert-dismissible" role="alert">
+                                        {{ session('error') }}
+                                    </div>
+                                @endif
                                 <form action="{{ route('register') }}" id="customer-form"
                                     class="js-customer-form" method="post">
                                     @csrf
@@ -69,7 +74,7 @@
                                                     <div class="relative"
                                                         [class]="formErrors.errors.email ? 'relative field-error' : 'relative'">
                                                         <input name="email" class="form-control" value=""
-                                                            type="email" placeholder="Email" required />
+                                                            type="email" placeholder="Correo Electrónico" required />
                                                         <span class="focus-border"><i></i></span>
                                                     </div>
                                                     <div class="form-control-error-comment"
@@ -90,7 +95,7 @@
                                                     <div class="input-group-dis js-parent-focus"
                                                         [class]="formErrors.errors.password ? 'input-group-dis js-parent-focus field-error' : 'input-group-dis js-parent-focus'">
                                                         <input class="form-control js-child-focus js-visible-password"
-                                                            name="password" type="password" placeholder="Password"
+                                                            name="password" type="password" placeholder="Ingrese su contraseña"
                                                             value="" pattern=".{5,}" required />
                                                         <span class="focus-border"><i></i></span>
                                                         <span class="input-group-btn" style="display: none">
@@ -119,7 +124,7 @@
                                                         [class]="formErrors.errors.password_confirmation ? 'input-group-dis js-parent-focus field-error' : 'input-group-dis js-parent-focus'">
                                                         <input class="form-control js-child-focus js-visible-password"
                                                             name="password_confirmation" type="password"
-                                                            placeholder="Confirmar Password" value="" pattern=".{5,}"
+                                                            placeholder="Ingrese su contraseña" value="" pattern=".{5,}"
                                                             required />
                                                         <span class="focus-border"><i></i></span>
                                                         <span class="input-group-btn" style="display: none">
@@ -141,8 +146,6 @@
                                     </section>
 
                                     <footer class="form-footer clearfix">
-                                        <input type="hidden" name="submitCreate" value="1" />
-
                                         <button class="btn btn-primary form-control-submit pull-xs-right"
                                             data-link-action="save-customer" type="submit">
                                             Registrarse
@@ -162,5 +165,5 @@
     </div>
 @endsection
 @section('content_script')
-<script src="{{ asset('template/js/bottom-695441840.js') }}"></script>
+<script src="{{ asset('template/js/bottom-38a1a7843.js') }}"></script>
 @endsection
