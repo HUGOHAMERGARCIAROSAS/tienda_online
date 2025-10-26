@@ -161,6 +161,10 @@ class ProductController extends Controller
             ]);
         }
 
+        $product = DB::table('products')->where('id', $id)->first();
+        $mainImagePath = public_path($product->url);
+        $mainImageExists = $product->url && file_exists($mainImagePath);
+
         DB::table('products')->where('id', $id)->update([
             'category_id' => $request->category,
             'name' => $request->name,
@@ -181,13 +185,10 @@ class ProductController extends Controller
                 $image = time(). '_' . $file->getClientOriginalName();
                 $file->move(public_path('template_admin/images/product'), $image);
 
-                if($key==0){
-                    $count = DB::table('product_images')->where('product_id', $id)->count();
-                    if ($count == 0) {
-                        DB::table('products')->where('id', $id)->update([
-                            'url' => 'template_admin/images/product/' . $image
-                        ]);
-                    }
+                if($key==0 && !$mainImageExists){
+                    DB::table('products')->where('id', $id)->update([
+                        'url' => 'template_admin/images/product/' . $image
+                    ]);
                 }
 
                 DB::table('product_images')->insert([

@@ -1,3 +1,19 @@
+<style>
+    .brand.product-brand {
+        width: 100%;
+        height: 100px; 
+        overflow: hidden;
+        position: relative;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+    }
+    .brand.product-brand img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+</style>
 <div class="elementor-element elementor-element-55b6be0f elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
     data-id="55b6be0f" data-element_type="section">
     <div class="elementor-container elementor-column-gap-default">
@@ -18,10 +34,12 @@
                                         data-slider_options={&quot;slidesToShow&quot;:7,&quot;slidesToShowTablet&quot;:3,&quot;slidesToShowMobile&quot;:1,&quot;slidesToScroll&quot;:1,&quot;slidesToScrollTablet&quot;:2,&quot;slidesToScrollMobile&quot;:1,&quot;autoplaySpeed&quot;:5000,&quot;autoplay&quot;:true,&quot;infinite&quot;:true,&quot;pauseOnHover&quot;:true,&quot;speed&quot;:500,&quot;arrows&quot;:true,&quot;dots&quot;:false,&quot;rtl&quot;:false,&quot;fade&quot;:false}>
                                         @foreach ($brands as  $brand)    
                                             <figure class="manuf-indent">
-                                                <a href="javascript:void(0);" title="Marcas" class="db oh">
-                                                    <img src="{{ $brand->url }}"
-                                                        alt="Marcas" width="202" height="150" loading="lazy">
-                                                </a>
+                                                <div class="brand product-brand">
+                                                    <a href="javascript:void(0);" title="Marcas" class="db oh">
+                                                        <img src="{{ $brand->url }}"
+                                                            alt="Marcas" width="202" height="150" loading="lazy">
+                                                    </a>
+                                                </div>
                                             </figure>
                                         @endforeach
                                     </div>

@@ -1643,6 +1643,13 @@ body .elementor-152010000 .elementor-element.elementor-element-2715a4f8 .element
     margin: 160px 0px 0px 0px;
 }
 
+
+@media (max-width: 767px) {
+    .elementor-152010000 .elementor-element.elementor-element-2715a4f8>.elementor-widget-container {
+        margin: 20px 0px 0px 0px;
+    }
+}
+
 .elementor-152010000 .elementor-element.elementor-element-2bde37cf:not(.elementor-motion-effects-element-type-background),
 .elementor-152010000 .elementor-element.elementor-element-2bde37cf>.elementor-motion-effects-container>.elementor-motion-effects-layer {
     background-color: #f8f8f8;
