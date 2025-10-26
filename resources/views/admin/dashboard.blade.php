@@ -17,7 +17,7 @@
 @section('content')
     <div class="app-content-wrap">
         <div class="container-fluid">
-            <div class="row overflow-hidden">
+            {{-- <div class="row overflow-hidden">
                 <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
                     <div class="card">
                         <div class="card-body mini-card-body d-flex align-center gap-16">
@@ -1386,7 +1386,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection

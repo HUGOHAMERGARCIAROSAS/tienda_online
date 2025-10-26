@@ -39,13 +39,17 @@
                                 <div class="login-section col-xs-12 col-sm-6">
                                     <h2>Iniciar sesión</h2>
                                     <section class="login-form">
-                                        <div class="help-block">
-                                            <ul>
-                                                <li class="alert alert-danger">
-                                                    Datos de acceso incorrectos
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        {{-- errors --}}
+                                        @if (session('error'))
+                                            <div class="help-block">
+                                                <ul>
+                                                    <li class="alert alert-danger">
+                                                        Datos de acceso incorrectos
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        @endif
+
                                         <form id="login-form" action="{{ route('login') }}" method="post">
                                             @csrf
                                             <section>
@@ -57,8 +61,8 @@
                                                                 [class]="formErrors.errors.email ? 'relative field-error' : 'relative'">
                                                                 <div class="icon-true">
                                                                     <input name="email" class="form-control"
-                                                                        value="client@gmail.com" type="email"
-                                                                        placeholder="Email" required />
+                                                                        value="" type="email"
+                                                                        placeholder="Ingrese su correo" required />
                                                                     <span class="focus-border"><i></i></span>
                                                                     <svg class="svgic input-icon">
                                                                         <use href="{{asset('template/images/lib.svg#email')}}">
@@ -82,7 +86,7 @@
                                                                     <input
                                                                         class="form-control js-child-focus js-visible-password"
                                                                         name="password" type="password"
-                                                                        placeholder="Password" value="123456"
+                                                                        placeholder="Ingrese su contraseña" value=""
                                                                         pattern=".{5,}" required />
                                                                     <span class="focus-border"><i></i></span>
 
@@ -109,7 +113,7 @@
                                                 </div>
                                                 <div class="forgot-password flex-container">
                                                     <input type="hidden" name="submitLogin" value="1" />
-                                                    <a href="https://alysum.promokit.eu/en/password-recovery" rel="nofollow"
+                                                    <a href="{{ route('reset_password') }}" rel="nofollow"
                                                         style="flex-grow: 1">
                                                         ¿Olvidaste tu contraseña?
                                                     </a>

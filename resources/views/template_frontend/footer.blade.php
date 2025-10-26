@@ -164,35 +164,15 @@
                                             data-widget_type="social-icons.default">
                                             <div class="elementor-widget-container">
                                                 <div class="elementor-social-icons-wrapper">
-                                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-facebook"
-                                                        href="{{$setting->facebook}}" target="_blank">
-                                                        <span class="elementor-screen-only">Facebook</span>
-                                                        <i class="fa fa-facebook"></i>
-                                                    </a>
-                                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-twitter"
-                                                        href="{{$setting->twitter}}" target="_blank">
-                                                        <span class="elementor-screen-only">Twitter</span>
-                                                        <i class="fa fa-twitter"></i>
-                                                    </a>
                                                     <a class="elementor-icon elementor-social-icon elementor-social-icon-instagram"
                                                         href="{{$setting->instagram}}" target="_blank">
                                                         <span class="elementor-screen-only">Instagram</span>
                                                         <i class="fa fa-instagram"></i>
                                                     </a>
-                                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-pinterest"
-                                                        href="{{$setting->pinterest}}" target="_blank">
-                                                        <span class="elementor-screen-only">Pinterest</span>
-                                                        <i class="fa fa-pinterest"></i>
-                                                    </a>
-                                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-youtube"
-                                                        href="{{$setting->youtube}}" target="_blank">
-                                                        <span class="elementor-screen-only">Youtube</span>
-                                                        <i class="fa fa-youtube"></i>
-                                                    </a>
-                                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-vimeo"
+                                                    <a class="elementor-icon elementor-social-icon elementor-social-icon-tiktok"
                                                         href="{{$setting->vimeo}}" target="_blank">
-                                                        <span class="elementor-screen-only">Vimeo</span>
-                                                        <i class="fa fa-vimeo"></i>
+                                                        <span class="elementor-screen-only">Tikto</span>
+                                                        <i class="fa fa-tiktok"></i>
                                                     </a>
                                                 </div>
                                             </div>
@@ -242,7 +222,7 @@
         .catch(error => {
             swal.fire("Error", "Ha ocurrido un error al suscribirte", "error");
         });
-            
+
     }
 
     document.getElementById('newsletter-input-footer').addEventListener('keypress', function (e) {

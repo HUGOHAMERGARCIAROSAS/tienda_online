@@ -40,8 +40,8 @@
                     <input type="hidden" name="submitLogin" value="1">
                     <div class="relative">
                         <div class="icon-true">
-                            <input autocomplete="off" class="form-control" name="email" type="email" value="client@gmail.com"
-                                placeholder="Email" required="">
+                            <input autocomplete="off" class="form-control" name="email" type="email" value=""
+                                placeholder="Correo Electrónico" required="">
                             <span class="focus-border"><i></i></span>
                             <svg class="svgic input-icon maincolor">
                                 <use href="{{ asset('template/images/lib.svg#email') }}"></use>
@@ -51,7 +51,7 @@
                     <div class="relative">
                         <div class="icon-true">
                             <input autocomplete="off" class="form-control" name="password" type="password"
-                                value="123456" placeholder="Password" required="">
+                                value="" placeholder="Contraseña" required="">
                             <span class="focus-border"><i></i></span>
                             <svg class="svgic input-icon maincolor">
                                 <use href="{{ asset('template/images/lib.svg#password') }}"></use>
@@ -64,7 +64,7 @@
                         </button>
                         &nbsp;
                     </div>
-                    <a href="password-recovery.html" rel="nofollow">
+                    <a href="{{ route('reset_password') }}" rel="nofollow">
                         ¿Has olvidado tu contraseña?
                     </a>
                 </form>

@@ -80,7 +80,7 @@ class ClientLoginController extends Controller
                 return redirect()->intended('/client/dashboard');
             }
         }
-        return back()->withErrors(['email' => 'Credenciales incorrectas']);
+        return back()->with('error', 'Credenciales incorrectas');
     }
 
     public function logout()
@@ -159,7 +159,21 @@ class ClientLoginController extends Controller
             ->orderBy('name', 'ASC')
             ->get();
         $setting = DB::table('settings')->first();
-        return view('client.mis_pedidos')->with(compact('categories','setting'));
+
+        $orders = DB::table('orders')
+            ->join('users', 'users.id', '=', 'orders.user_id')
+            ->select(
+                'orders.id',
+                'users.name as user_name',
+                DB::raw("DATE_FORMAT(orders.created_at, '%d/%m/%Y %H:%i') as fecha_formateada"),
+                'orders.total',
+                'orders.status'
+            )
+            ->orderBy('orders.created_at', 'desc')
+            ->where('orders.user_id', Auth::guard('web')->user()->id)
+            ->paginate(10);
+
+        return view('client.mis_pedidos')->with(compact('categories','setting','orders'));
     }
 
 }

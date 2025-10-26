@@ -1,7 +1,7 @@
 @extends('template_frontend.layout')
 @section('content_style')
     <link rel="stylesheet" href="{{ asset('template/css/theme-6825b4844.css') }}" media="all">
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/> --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 @endsection
 @section('content')
     <div class="page-width top-content">

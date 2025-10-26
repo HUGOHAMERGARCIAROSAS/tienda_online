@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
             subtotal += itemSubtotal;
             const div = document.createElement("div");
             div.className =
-                "cart-item d-flex align-items-center justify-content-between border-bottom pb-2";
+                "cart-itemm d-flex align-items-center justify-content-between border-bottom pb-2";
             div.innerHTML = `
                 <div class="d-flex align-items-center gap-3">
                 <img src="${item.image}" alt="${item.name}">
@@ -48,16 +48,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         cartContainer.addEventListener("click", (e) => {
             const index = e.target.dataset.index;
-
             if (e.target.classList.contains("btn-increase")) {
                 cart[index].quantity++;
                 renderCart();
+                loadCart();
             }
 
             if (e.target.classList.contains("btn-decrease")) {
                 if (cart[index].quantity > 1) {
-                cart[index].quantity--;
-                renderCart();
+                    cart[index].quantity--;
+                    renderCart();
+                    loadCart();
                 }
             }
 
@@ -75,7 +76,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }).then((result) => {
                     if (result.isConfirmed) {
                         cart.splice(idx, 1);
+                        localStorage.setItem("cart", JSON.stringify(cart));
                         renderCart();
+                        loadCart();
                     } else {
                         return;
                     }
@@ -90,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (isNaN(value) || value < 1) value = 1;
             cart[index].quantity = value;
             renderCart();
+            loadCart();
             }
         });
 

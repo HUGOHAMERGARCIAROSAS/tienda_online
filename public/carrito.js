@@ -20,7 +20,7 @@ function addToCart(productId) {
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     loadCart();
-    renderCart();
+
 }
 
 function loadCart() {
@@ -83,7 +83,7 @@ function removeFromCart(index) {
     cart.splice(index, 1);
     localStorage.setItem('cart', JSON.stringify(cart));
     loadCart();
-    renderCart();
+
 }
 
 function updateCartCount() {
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     loadCart();
-    renderCart();
+
 });
 
 function addToCart2(productId) {
@@ -138,7 +138,7 @@ function addToCart2(productId) {
 
     localStorage.setItem('cart', JSON.stringify(cart));
     loadCart();
-    renderCart();
+
 }
 
 document.addEventListener("DOMContentLoaded", function () {

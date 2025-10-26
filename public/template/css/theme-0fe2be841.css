@@ -11051,6 +11051,10 @@ body.elementor-page .elementor-widget-menu-anchor {
     background-color: #262626
 }
 
+.elementor-social-icon-tiktok {
+    background-color: #000
+}
+
 .elementor-social-icon-jsfiddle {
     background-color: #487aa2
 }
@@ -14145,7 +14149,7 @@ body .elementor-152010000 .elementor-element.elementor-element-350f921 .elemento
     left: 10%;
     top: 0%
 }
-/* 
+/*
 .elementor-152010000 .elementor-element.elementor-element-350f921 {
         {
         CURRENT_ITEM

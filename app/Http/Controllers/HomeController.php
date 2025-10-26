@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\OrderItem;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -288,6 +291,60 @@ class HomeController extends Controller
             ->where('status', 1)
             ->get();
         return view('frontend.new_products.index')->with(compact('categories','setting','products'));
+    }
+
+    public function reset_password(){
+        $categories = DB::table('categories')
+            ->whereNotNull('parent_id')
+            ->where('status',1)
+            ->orderBy('name', 'ASC')
+            ->get();
+            $setting = DB::table('settings')->first();
+        return view('frontend.reset_password.index')->with(compact('categories','setting'));
+    }
+
+    public function  reset_password_store(Request $request){
+        $request->validate(['email' => 'required|email']);
+        $status = Password::sendResetLink(
+            $request->only('email')
+        );
+         return $status === Password::RESET_LINK_SENT
+        ? back()->with(['status' => 'Te hemos enviado un enlace para restablecer tu contraseña.'])
+        : back()->withErrors(['email' => 'No pudimos encontrar un usuario con ese correo.']);
+    }
+
+    public function showResetForm($token){
+        $categories = DB::table('categories')
+            ->whereNotNull('parent_id')
+            ->where('status',1)
+            ->orderBy('name', 'ASC')
+            ->get();
+            $setting = DB::table('settings')->first();
+        return view('frontend.reset_password.reset')->with(compact('categories','setting','token'));
+    }
+
+    public function reset(Request $request)
+    {
+        $request->validate([
+            'token' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        $status = Password::reset(
+            $request->only('email', 'password', 'password_confirmation', 'token'),
+            function ($user) use ($request) {
+                $user->forceFill([
+                    'password' => Hash::make($request->password),
+                ])->save();
+
+                Auth::login($user);
+            }
+        );
+
+        return $status == Password::PASSWORD_RESET
+            ? redirect()->route('login')->with('status', __($status))
+            : back()->withErrors(['email' => [__($status)]]);
     }
 
 }

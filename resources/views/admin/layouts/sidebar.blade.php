@@ -61,7 +61,7 @@
                         <li class="slide">
                             <a href="{{ route('admin.categories.index') }}" class="sidebar-menu-item">Categorias</a>
                         </li>
-                        <li class="slide">
+                        {{-- <li class="slide">
                             <a href="crm-deals.html" class="sidebar-menu-item">Marcas / proveedores</a>
                         </li>
                         <li class="slide">
@@ -69,7 +69,7 @@
                         </li>
                         <li class="slide">
                             <a href="crm-leads.html" class="sidebar-menu-item">Inventario</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
                 <li class="slide has-sub">
@@ -87,10 +87,10 @@
                         <i class="ri-arrow-down-s-fill side-menu-angle"></i>
                     </a>
                     <ul class="sidebar-menu child1">
-                        <li class="slide"> <a href="#" class="sidebar-menu-item">Listado de Pedidos</a></li>
-                        <li class="slide"> <a href="#" class="sidebar-menu-item">Devoluciones y reembolsos</a>
+                        <li class="slide"> <a href="{{ route('admin.orders.index') }}" class="sidebar-menu-item">Listado de Pedidos</a></li>
+                        {{-- <li class="slide"> <a href="#" class="sidebar-menu-item">Devoluciones y reembolsos</a>
                         </li>
-                        <li class="slide"> <a href="#" class="sidebar-menu-item">Facturación y comprobantes</a>
+                        <li class="slide"> <a href="#" class="sidebar-menu-item">Facturación y comprobantes</a> --}}
                         </li>
                     </ul>
                 </li>
@@ -110,17 +110,17 @@
                     </a>
                     <ul class="sidebar-menu child1">
                         <li class="slide">
-                            <a class="sidebar-menu-item" href="#">Lista de clientes</a>
+                            <a class="sidebar-menu-item" href="{{ route('admin.clients.index') }}">Lista de clientes</a>
                         </li>
-                        <li class="slide">
+                        {{-- <li class="slide">
                             <a class="sidebar-menu-item" href="#">Segmentación de clientes</a>
                         </li>
                         <li class="slide">
                             <a class="sidebar-menu-item" href="#">Suscripciones a newsletter</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
-                <li class="slide has-sub">
+                {{-- <li class="slide has-sub">
                     <a href="javascript:void(0);" class="sidebar-menu-item">
                         <div class="side-menu-icon">
                             <i class="">
@@ -148,8 +148,8 @@
                             <a class="sidebar-menu-item" href="#">Reseñas</a>
                         </li>
                     </ul>
-                </li>
-                <li class="slide has-sub">
+                </li> --}}
+                {{-- <li class="slide has-sub">
                     <a href="javascript:void(0);" class="sidebar-menu-item">
                         <div class="side-menu-icon">
                             <i class="">
@@ -174,8 +174,8 @@
                             <a class="sidebar-menu-item" href="#">Gestión de reembolsos</a>
                         </li>
                     </ul>
-                </li>
-                <li class="slide has-sub">
+                </li> --}}
+                {{-- <li class="slide has-sub">
                     <a href="javascript:void(0);" class="sidebar-menu-item">
                         <div class="side-menu-icon">
                             <i class="">
@@ -200,8 +200,8 @@
                             <a class="sidebar-menu-item" href="#">Seguimiento de envíos</a>
                         </li>
                     </ul>
-                </li>
-                <li class="slide has-sub">
+                </li> --}}
+                {{-- <li class="slide has-sub">
                     <a href="javascript:void(0);" class="sidebar-menu-item">
                         <div class="side-menu-icon">
                             <i class="">
@@ -232,8 +232,8 @@
                             <a class="sidebar-menu-item" href="#">Rentabilidad</a>
                         </li>
                     </ul>
-                </li>
-                <li class="slide has-sub">
+                </li> --}}
+                {{-- <li class="slide has-sub">
                     <a href="javascript:void(0);" class="sidebar-menu-item">
                         <div class="side-menu-icon">
                             <i class="">
@@ -261,7 +261,7 @@
                             <a class="sidebar-menu-item" href="#">Seguridad</a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
                 <li class="slide has-sub">
                     <a href="javascript:void(0);" class="sidebar-menu-item">
                         <div class="side-menu-icon">
@@ -280,7 +280,7 @@
                         <li class="slide">
                             <a class="sidebar-menu-item" href="{{route('admin.brands.index')}}">Marcas</a>
                         </li>
-                        <li class="slide">
+                        {{-- <li class="slide">
                             <a class="sidebar-menu-item" href="#">Impuestos</a>
                         </li>
                         <li class="slide">
@@ -288,7 +288,7 @@
                         </li>
                         <li class="slide">
                             <a class="sidebar-menu-item" href="#">Seguridad</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
             </ul>

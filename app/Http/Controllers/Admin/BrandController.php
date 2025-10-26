@@ -28,7 +28,7 @@ class BrandController extends Controller
         }
 
         return  redirect()->route('admin.brands.index')->with('error', 'No se pudo crear la marca.');
-        
+
     }
 
     public function update(Request $request, $id){

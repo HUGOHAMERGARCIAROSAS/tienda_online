@@ -12,8 +12,8 @@
 
                 @include('home.productos_destacados')
 
-                @include('home.banners')
-                
+                {{-- @include('home.banners')  --}}
+
                 {{-- @include('home.informacion') --}}
 
                 {{-- @include('home.testimonios') --}}
@@ -21,7 +21,7 @@
                 @include('home.blog')
 
                 {{-- @include('home.otros_productos') --}}
-                
+
                 {{-- @include('home.ver_todo') --}}
             </div>
         </div>
